@@ -1,0 +1,275 @@
+module.exports = [
+    {
+        name:"Aaron Dicer",
+        img: "https://pbs.twimg.com/profile_images/928986393094877184/A_1jpZVj_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War', 
+            'Incredibles 2', 
+            'Jurassic World: Fallen Kingdom', 
+            'Solo: A Star Wars Story', 
+            'Deadpool 2', 
+            'Ant-Man and the Wasp', 
+            'Mission: Impossible - Fallout', 
+            "Ocean's 8",
+            'Skyscraper',
+            'The Meg',
+            'Tag',
+            'Hotel Transylvania 3: Summer',
+            'Sicario: Day of the Soldado'
+        ],
+        points: 0,
+        guru: true
+    },
+    {
+        name:"Jack Grimme",
+        img: "https://pbs.twimg.com/profile_images/954773674900492288/QGScu-et_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Deadpool 2',
+            'Jurassic World: Fallen Kingdom',
+            'Solo: A Star Wars Story',    
+            'Incredibles 2',  
+            'Ant-Man and the Wasp', 
+            'Mission: Impossible - Fallout',
+            'Skyscraper', 
+            'The First Purge',
+            "Disney's Christopher Robin",
+            'Mamma Mia: Here We Go Again!',
+            'The Equalizer 2',
+            'Tag'
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Dennis",
+        img: "https://pbs.twimg.com/profile_images/945866606739120128/LC75cQVU_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Solo: A Star Wars Story',    
+            'Incredibles 2',  
+            'Deadpool 2',
+            'Jurassic World: Fallen Kingdom',
+            'Ant-Man and the Wasp', 
+            'Mission: Impossible - Fallout',
+            "Ocean's 8",
+            'Skyscraper',
+            'Mamma Mia: Here We Go Again!',
+            'Tag',
+            'Hotel Transylvania 3: Summer',
+            'The Meg'
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Ronan",
+        img: "https://pbs.twimg.com/profile_images/976885779724165121/OYCqfW5e_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Solo: A Star Wars Story',    
+            'Incredibles 2',  
+            'Jurassic World: Fallen Kingdom',
+            'Deadpool 2',
+            'Mission: Impossible - Fallout',
+            'Mamma Mia: Here We Go Again!',
+            'Hotel Transylvania 3: Summer',
+            'Ant-Man and the Wasp', 
+            'The Equalizer 2',
+            "Ocean's 8",
+            'The First Purge',
+            'Sicario: Day of the Soldado'
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Lance Giuliano",
+        img: "https://pbs.twimg.com/profile_images/954120221027004416/10nWMr3B_400x400.jpg",
+        picks: [
+            'Solo: A Star Wars Story',
+            'Deadpool 2',
+            'Incredibles 2',
+            'Jurassic World: Fallen Kingdom',
+            'Mission: Impossible - Fallout',
+            'Hotel Transylvania 3: Summer',
+            'Skyscraper',
+            'Teen Titans Go! To The Movies',
+            'Ant-Man and the Wasp',    
+            'Sicario: Day of the Soldado',
+            'Hereditary',
+            'Action Point',
+            "Ocean's 8"                 
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Austin Belzer",
+        img: "https://pbs.twimg.com/profile_images/961804680098594816/3_AVp5PI_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Incredibles 2',
+            'Deadpool 2',
+            'Skyscraper', 
+            'Ant-Man and the Wasp',
+            "Won't You Be My Neighbor?",
+            'Mamma Mia: Here We Go Again!',
+            'Solo: A Star Wars Story',    
+            'Jurassic World: Fallen Kingdom',    
+            'Mission: Impossible - Fallout',
+            'Sicario: Day of the Soldado',
+            "Disney's Christopher Robin",
+            'Sorry to Bother You'
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"John Combs",
+        img: "https://pbs.twimg.com/profile_images/904946085432619008/jFIKjkog_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Incredibles 2',
+            'Jurassic World: Fallen Kingdom', 
+            'Deadpool 2',
+            'Solo: A Star Wars Story',
+            'Mission: Impossible - Fallout',
+            'Ant-Man and the Wasp',
+            'Sicario: Day of the Soldado',
+            'The First Purge',
+            'Hereditary',
+            "Tag",
+            'The Equalizer 2',
+            "The Meg"
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Eric Jewell",
+        img: "https://pbs.twimg.com/profile_images/973267847039332358/8kIB6-Om_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Incredibles 2',
+            'Deadpool 2',
+            'Solo: A Star Wars Story',
+            'Jurassic World: Fallen Kingdom', 
+            'Ant-Man and the Wasp',
+            'Hotel Transylvania 3: Summer',
+            'Mission: Impossible - Fallout',
+            ' ',
+            'The First Purge',
+            'Mamma Mia: Here We Go Again!',
+            'The Meg',
+            "Disney's Christopher Robin"   
+        ],
+        points: 0,
+        guru: false
+    }, 
+    {
+        name:"Drew Dayton",
+        img: "https://pbs.twimg.com/profile_images/632232155469352961/-pB2RdMj_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Deadpool 2',
+            'Incredibles 2',
+            'Solo: A Star Wars Story',
+            "Disney's Christopher Robin",
+            'Mission: Impossible - Fallout', 
+            'Jurassic World: Fallen Kingdom', 
+            'Teen Titans Go! To The Movies',  
+            'Ant-Man and the Wasp',
+            'Tag',
+            'Sicario: Day of the Soldado',
+            'Hotel Transylvania 3: Summer',
+            "Ocean's 8"  
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Ishan",
+        img: "https://pbs.twimg.com/profile_images/707932139032080385/1kljSomp_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Incredibles 2',
+            'Deadpool 2',
+            'Solo: A Star Wars Story',
+            'Jurassic World: Fallen Kingdom',
+            'Mission: Impossible - Fallout',
+            'Ant-Man and the Wasp',
+            "Disney's Christopher Robin",
+            "Ocean's 8",
+            'Hotel Transylvania 3: Summer',
+            'Skyscraper',
+            'The Meg',
+            'Sicario: Day of the Soldado'   
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Drew",
+        img: "https://pbs.twimg.com/profile_images/832895593886347264/r2A9Eco1_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Jurassic World: Fallen Kingdom',
+            'Deadpool 2',
+            'Incredibles 2',
+            'Mission: Impossible - Fallout',
+            'Ant-Man and the Wasp',
+            "Ocean's 8",
+            'Solo: A Star Wars Story',
+            'Skyscraper',
+            'Tag',
+            'The First Purge',
+            'Mamma Mia: Here We Go Again!',
+            'Teen Titans Go! To The Movies'  
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Joshua Etchison",
+        img: "https://pbs.twimg.com/profile_images/971591439032479744/c_nkeJOo_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Incredibles 2',
+            'Solo: A Star Wars Story',
+            'Jurassic World: Fallen Kingdom',
+            'Ant-Man and the Wasp',
+            'Mission: Impossible - Fallout',
+            'The First Purge',
+            "Disney's Christopher Robin",
+            "Ocean's 8",
+            'Tag',
+            'Skyscraper',
+            'Sicario: Day of the Soldado',
+            'Hereditary'  
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Colin",
+        img: "https://abs.twimg.com/sticky/default_profile_images/default_profile_bigger.png",
+        picks: [
+            'Incredibles 2',
+            'Avengers: Infinity War',
+            'Solo: A Star Wars Story',
+            'Deadpool 2',
+            'Jurassic World: Fallen Kingdom',
+            'Ant-Man and the Wasp',
+            'Mission: Impossible - Fallout',
+            'Tag',
+            'Sicario: Day of the Soldado',
+            'Mamma Mia: Here We Go Again!',
+            "Ocean's 8",
+            'Skyscraper',
+            'Action Point' 
+        ],
+        points: 0,
+        guru: false
+    },
+]

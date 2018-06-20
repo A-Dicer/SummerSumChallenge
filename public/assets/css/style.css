@@ -1,0 +1,108 @@
+
+body {
+	padding-top: 50px;
+	padding-right: 15px;
+	padding-left: 15px;
+	background: linear-gradient(to bottom right, rgb(160, 115, 250),  rgb(99, 17, 171));
+	height: 100vh;
+}
+
+.navbar {
+	background: rgb(208, 208, 208);
+	border-bottom: solid #000 2px;
+	margin: -15px;
+	margin-bottom: 50px;
+	border-radius: 15px 15px 0 0;
+	padding: 0;
+}
+
+#links {
+	height: 35px;
+	overflow: hidden;
+	border-radius: 0 12px 0 0;
+}
+
+#sscLogo {
+	position: absolute;
+	top: -50px;
+	margin-left: 25px;
+	width: 250px;
+}
+
+p {
+	padding-left: 15px;
+}
+#dnaLogo {
+	right: -7px;
+}
+
+.logo {
+	width: 50px;
+	position: relative;
+	top: -8px;
+	border: solid #000 2px
+}
+
+#container {
+	border: solid #000 2px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background: #fff;
+	box-shadow:4px 4px 13px 0px #00000078;
+	margin: 0 auto;
+	border-radius: 15px;
+}
+
+#boxOffice {
+	font-size: 15px;
+	max-width: 375px;
+	margin: 0 auto 25px;
+	padding: 0;
+}
+
+#leaderBoard {	
+	margin: 0 auto;
+	height: 248px;
+	/* border-radius: 10px; */
+	font-size: 15px;
+	/* max-width: 350px; */
+	overflow: scroll;
+}
+
+#about {
+	margin-bottom: 25px;
+}
+
+.data {
+	margin: 0;
+	padding: 0;
+}
+
+.lbData {
+	background: #ccc;
+	border-top: solid #000 1px;
+	border-bottom: solid #000 1px;
+}
+
+.guru {
+	width: 10px;
+}
+
+.round {
+	width: 20px;
+
+}
+.table td, .table th {
+	padding: 0 3px;
+}
+
+.bio {
+	width: 150px;
+}
+/* #lb {
+	width: 500px;
+	height: 300px;
+	background: #fff;
+	border: solid #000 1px;
+	box-shadow:4px 4px 13px 0px #00000078;
+} */
