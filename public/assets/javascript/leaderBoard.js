@@ -87,6 +87,7 @@ userInfo = (player) =>{
 $(".fa-users").click(function(){
   $(".fa-user-astronaut").removeClass('selected')
   $(".fa-users").addClass('selected')
+  pos = 0;
   display(group);
   setTimeout(function(){
     userInfo(group[0]);
@@ -96,6 +97,7 @@ $(".fa-users").click(function(){
 $(".fa-user-astronaut").click(function(){
   $(".fa-users").removeClass('selected')
   $(".fa-user-astronaut").addClass('selected')
+  pos = 0;
   display(gurus);
   setTimeout(function(){
     userInfo(gurus[0]);
