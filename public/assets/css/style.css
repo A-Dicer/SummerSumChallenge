@@ -52,10 +52,11 @@ p { padding-left: 15px }
 	font-size: 15px;
 	max-width: 375px;
 	margin: 0 auto 25px;
-	padding: 0
+	padding-left: 15px
 }
 
-.title { margin-left: -25px }
+.title { padding-left: 15px }
+
 .amount { margin-left: -25px }
 
 #leaderBoard {	
