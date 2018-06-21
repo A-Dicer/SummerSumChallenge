@@ -74,6 +74,8 @@ userInfo = (player) =>{
       
   $("#picks").html(' ')
   data.forEach( function(pick, i) {
+    let line = ''
+    if(i === 9) line = '<hr>'
     if(pick.points === '-') icon = " <i class='far fa-times-circle'></i>";
     else icon =  "<i class='far fa-check-circle'></i>";
     
@@ -82,7 +84,8 @@ userInfo = (player) =>{
         "<div class='col-2'>" + icon + "</div>" +
         "<div class='col-8 text-truncate'>" + pick.title + "</div>" +
         "<div class='col-2 text-left'>" + pick.points + "</div>" +
-      "</div>"
+      "</div>" + line
+      
     ); 
   })
 }
