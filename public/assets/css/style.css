@@ -63,7 +63,7 @@ p { padding-left: 15px }
 	height: 248px;
 	font-size: 15px;
 	max-width: 500px;
-	overflow: scroll;
+	overflow: auto;
 	padding-bottom: 15px
 }
 
