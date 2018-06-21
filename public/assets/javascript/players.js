@@ -158,7 +158,7 @@ module.exports = [
             'Ant-Man and the Wasp',
             'Hotel Transylvania 3: Summer',
             'Mission: Impossible - Fallout',
-            ' ',
+            '-',
             'The First Purge',
             'Mamma Mia: Here We Go Again!',
             'The Meg',

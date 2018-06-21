@@ -3,28 +3,30 @@
   <head>
     <meta charset="UTF-8">
     <title>Summer Sum Challenge</title>
-
-    <link rel="icon" href="/favicon.ico">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+   
+    <link rel="icon" href="/favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+   
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
   </head>
   <body id="body">
     <div class="col-lg-10" id="container">  
       <nav class="navbar">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#"></a>
           <img src="assets/img/sscLogo6.png" id="sscLogo" class="d-inline-block align-top" alt="ssc logo">   
         </a>
         <div id="links">
-            <a class="" href="http://studiodna.media" target="new">
-              <img src="assets/img/dnaLogo.jpg" id="dnaLogo" class="logo" alt="dna logo">
-            </a>
-            <a  href="http://www.siftpop.com" target="new">
-              <img src="assets/img/siftpopLogo.jpg" id="spLogo" class="logo" alt="sp logo">      
-            </a>
+          <a class="" href="http://studiodna.media" target="new">
+            <img src="assets/img/dnaLogo.jpg" id="dnaLogo" class="logo" alt="dna logo">
+          </a>
+          <a  href="http://www.siftpop.com" target="new">
+            <img src="assets/img/siftpopLogo.jpg" id="spLogo" class="logo" alt="sp logo">      
+          </a>
         </div>
       </nav>
       <div class="row">
@@ -41,37 +43,51 @@
                 Each player picks and ranks the top 10 movies they think 
                 will make the most money domestically between May and September. 
               </p>
-              
             </div>
             <div class="col-12">
-              <h4 class="text-center title"><i class="fas fa-film"></i> Box Office Results </h4>
+              <h4 class="text-center title"><i class="fas fa-film" id="box"></i> Box Office Results </h4>
               <hr>
               <div class="row" id="boxOffice">
-                  
-  
+
               </div> 
               <hr>   
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 right">
           <h4 class="text-center"><i class="fas fa-trophy"></i> Leader Board</h4>
+          <div id="displayOptions"> 
+            <i class="fas fa-users selected"></i> / <i class="fas fa-user-astronaut"></i> 
+          </div>
           <hr>
-            <div id="leaderBoard">
-            <table id="leaderBoard" class="table table-striped border">
-              <!-- <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead> -->
-              <tbody id="lb">
-               
-              </tbody>
-            </table> 
+          <div class="col-12" id="leaderBoard">
+             
+          </div>
+          <div class="col-12" id="userInfo">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body row">
+                    <div class="col-12 left-card">
+                      <img class="userBgImg" src="" alt="" />    
+                    </div>
+                    <div class="col-12">
+                      <img src="" id="playerImg" alt="">
+                    </div>
+                    <div class="col-12">
+                      <h5 class="card-title text-center"></h5>
+                      <hr>
+                      <div class="row">
+                        <div class="col-12" id="picks">
+                          
+                        </div>
+                      </div>
+                    </div>         
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </div>

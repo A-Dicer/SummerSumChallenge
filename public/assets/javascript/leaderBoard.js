@@ -1,41 +1,111 @@
-let players
+let pos = 0; let group; let gurus; let movies;
 
 $.ajax({
-    url: "/players",
-    method: "GET"
-  }).done(function(players) { 
-    display(players)
-  });
+  url: "/players",
+  method: "GET"
+}).done(function(players) { 
+  
+  group = players
+  gurus = players.filter(player => player.guru)
 
+  display(players);
+  setTimeout(function(){
+    userInfo(players[0]);
+  }, 100)
+});
 
-
+$.ajax({
+  url: "/boxoffice",
+  method: "GET"
+}).done(function(res) { 
+  movies = res
+  
+});
 
 display = (players) =>{
+
+  $("#leaderBoard").html(' ')
+
   players.forEach( function(player, i) { 
-    if(player.guru) {
-      $("#lb").append(
-        "<tr id='player" + i +"'>" +
-        "<th scope='row'>" + (i+1) + ":</th>" +
-        "<div class='pos col-1'>" + (i + 1) + ":</div>" + 
-        "<td>" + player.name + "</td>" + 
-        "<td>" + player.points + "pts</td>"+
-        "<td><img src='assets/img/guru.png' class='guru' alt=''></td>" +
-        "</tr>"
-      );
-    } else {
-      $("#lb").append(
-        "<tr id='player" + i +"'>" +
-        "<th scope='row'>" + (i+1) + ":</th>" +
-        "<div class='pos col-1'>" + (i + 1) + ":</div>" + 
-        "<td>" + player.name + "</td>" + 
-        "<td>" + player.points + "pts</td>"+
-        "<td></td></tr>"
-      );
-    }
+    let guru = ""
+    let btn = "btn-light"
+
+    if(player.guru) guru = "<i class='fas fa-user-astronaut guru'></i>";
+    if(i === 0) btn = "btn-info";
+
+    $("#leaderBoard").append(
+      "<button id='"+ i +"' type='button' class='btn btn-sm " + btn+ " btn-block'>" +
+        "<div class='row'>" +
+          "<div class='col-1'>" + (i +1) + ":</div>" +
+          "<div class='col-6 text-left'>" + player.name + "</div>" +
+          "<div class'col-4'>" + player.points + "pts </div><div class='col-1'>" + guru + "</div>" +
+        "</div>" +
+      "</button>"
+    );
   })  
+
+  $("button").click(function(){
+    userInfo(players[$(this).attr('id')]);
+    $("#" + pos).removeClass('btn-info').addClass('btn-light')
+    pos = $(this).attr('id');
+    $(this).removeClass('btn-light').addClass('btn-info')
+  })
+}
+ 
+userInfo = (player) =>{
+  
+  let data = []
+  
+  player.picks.forEach(function(pick, i){
+    let point = '-';
+    movies.forEach(function(title, a){
+      
+      if(pick === title.title && i < 10) point = (10 - Math.abs(i-a));
+      else if(pick === title.title ) point = 1;
+    }) 
+    data.push({ title: pick, points: point})  
+  })
+
+  $("#playerImg, .userBgImg").attr('src', player.img);
+  $(".card-title").text(player.name + " - " + player.points + " Points")
+      
+  $("#picks").html(' ')
+  data.forEach( function(pick, i) {
+    if(pick.points === '-') icon = " <i class='far fa-times-circle'></i>";
+    else icon =  "<i class='far fa-check-circle'></i>";
+    
+    $("#picks").append(
+      "<div class='row uds'>" +
+        "<div class='col-2'>" + icon + "</div>" +
+        "<div class='col-8 text-truncate'>" + pick.title + "</div>" +
+        "<div class='col-2 text-left'>" + pick.points + "</div>" +
+      "</div>"
+    ); 
+  })
 }
 
-                  
-                  
-                
+$(".fa-users").click(function(){
+  $(".fa-user-astronaut").removeClass('selected')
+  $(".fa-users").addClass('selected')
+  display(group);
+  setTimeout(function(){
+    userInfo(group[0]);
+  }, 100)
+}).addClass('selected')
+
+$(".fa-user-astronaut").click(function(){
+  $(".fa-users").removeClass('selected')
+  $(".fa-user-astronaut").addClass('selected')
+  display(gurus);
+  setTimeout(function(){
+    userInfo(gurus[0]);
+  }, 100)
+})
+
+                          
+                          
+                         
+
+
+ 
 
