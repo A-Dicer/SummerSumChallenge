@@ -272,4 +272,172 @@ module.exports = [
         points: 0,
         guru: false
     },
-]
+    {
+        name:"Chris",
+        img: "https://pbs.twimg.com/profile_images/673313451293429760/IGy6eqB5_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Incredibles 2',
+            'Deadpool 2',
+            'Jurassic World: Fallen Kingdom',
+            'Solo: A Star Wars Story',    
+            'Ant-Man and the Wasp',
+            'Mission: Impossible - Fallout',
+            'Mamma Mia: Here We Go Again!',
+            'Slender Man',
+            'Hotel Transylvania 3: Summer',
+            'The First Purge',
+            'Sicario: Day of the Soldado',
+            'Tag'
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Foster H",
+        img: "https://pbs.twimg.com/profile_images/880460708206530560/hsouzFXs_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Jurassic World: Fallen Kingdom',
+            'Incredibles 2',
+            'Deadpool 2',    
+            'Solo: A Star Wars Story',
+            'Mission: Impossible - Fallout',    
+            'Ant-Man and the Wasp',
+            "Ocean's 8",
+            'The First Purge',
+            'Hotel Transylvania 3: Summer',
+            'Uncle Drew',
+            'Skyscraper',
+            'Slender Man'
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Merlin Mei",
+        img: "https://pbs.twimg.com/profile_images/946180605968076800/hQVuJg1b_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Incredibles 2',
+            'Solo: A Star Wars Story',
+            'Deadpool 2', 
+            'Jurassic World: Fallen Kingdom',
+            'Ant-Man and the Wasp',
+            'Skyscraper', 
+            'Hotel Transylvania 3: Summer',
+            "Disney's Christopher Robin",
+            'Mission: Impossible - Fallout',    
+            'Crazy Rich Asians',
+            "Ocean's 8",
+            'The First Purge'
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Jesse Frost",
+        img: "https://pbs.twimg.com/profile_images/969452143047450624/hTT-SgcQ_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Incredibles 2',
+            'Jurassic World: Fallen Kingdom',
+            'Solo: A Star Wars Story',
+            'Deadpool 2', 
+            'Ant-Man and the Wasp',
+            'Mission: Impossible - Fallout',
+            'Skyscraper', 
+            'The Meg',
+            'Mamma Mia: Here We Go Again!',
+            "Ocean's 8",
+            'Sicario: Day of the Soldado',
+            'The First Purge'
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Blake",
+        img: "https://pbs.twimg.com/profile_images/960042421454336000/ZzJkdjj0_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Incredibles 2',
+            'Deadpool 2', 
+            'Solo: A Star Wars Story',
+            'Jurassic World: Fallen Kingdom',  
+            'Ant-Man and the Wasp',
+            'Hotel Transylvania 3: Summer',
+            'Mission: Impossible - Fallout',
+            'Uncle Drew',
+            "Ocean's 8",
+            'The First Purge',
+            'Skyscraper', 
+            'Life of the Party '
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Ian",
+        img: "https://pbs.twimg.com/profile_images/758750977642012672/BZFqybTo_400x400.jpg",
+        picks: [
+            'Avengers: Infinity War',
+            'Deadpool 2', 
+            'Jurassic World: Fallen Kingdom',
+            'Solo: A Star Wars Story',
+            'Incredibles 2',
+            'Ant-Man and the Wasp',
+            'Mission: Impossible - Fallout',
+            "Ocean's 8",
+            'Sicario: Day of the Soldado',
+            'The First Purge',
+            'Hotel Transylvania 3: Summer',
+            'Skyscraper',
+            'Uncle Drew'
+        ],
+        points: 0,
+        guru: false
+    },
+    {
+        name:"Callenleya",
+        img: "https://pbs.twimg.com/profile_images/514177628022910976/rFhxDMjT_400x400.png",
+        picks: [
+            'Avengers: Infinity War',
+            'Jurassic World: Fallen Kingdom',
+            'Solo: A Star Wars Story',
+            'Deadpool 2', 
+            'Incredibles 2',
+            'Mission: Impossible - Fallout',
+            'Hotel Transylvania 3: Summer',
+            'Ant-Man and the Wasp',
+            'Mamma Mia: Here We Go Again!',
+            "Disney's Christopher Robin",
+            "Ocean's 8",
+            'The Equalizer 2',
+            'The First Purge'
+        ],
+        points: 0,
+        guru: false
+    },	
+    {
+        name:"Ben Abramowitz",
+        img: "https://pbs.twimg.com/profile_images/996752091359186944/jGTdXxsf_400x400.jpg",
+        picks: [
+            'Incredibles 2',
+            'Avengers: Infinity War',
+            'Solo: A Star Wars Story',
+            'Jurassic World: Fallen Kingdom',
+            'Ant-Man and the Wasp',
+            'Deadpool 2', 
+            'Hotel Transylvania 3: Summer',
+            "Ocean's 8",
+            'Mission: Impossible - Fallout',
+            'Mamma Mia: Here We Go Again!',
+            'Sicario: Day of the Soldado',
+            'Skyscraper',
+            'The Equalizer 2'
+        ],
+        points: 0,
+        guru: false
+    },		
+] 				

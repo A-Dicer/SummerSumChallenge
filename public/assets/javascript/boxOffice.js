@@ -2,7 +2,6 @@ $.ajax({
     url: "/boxoffice",
     method: "GET"
   }).done(function(res) {
-     
       res.forEach( function(item, i) {
         $("#boxOffice").append(
             "<div class='col-12 data' id='pos" + i +"'> <div class='row'>" +
