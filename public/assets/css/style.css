@@ -60,7 +60,7 @@ p { padding-left: 15px }
 
 #leaderBoard {	
 	margin: 30px auto 25px;
-	height: 460px;
+	max-height: 460px;
 	font-size: 15px;
 	max-width: 500px;
 	overflow: auto;
