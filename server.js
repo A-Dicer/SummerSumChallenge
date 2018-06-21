@@ -33,19 +33,19 @@ request("http://www.boxofficemojo.com/seasonal/?view=releasedate&yr=2018&season=
     }
   })
 
-    players.forEach(function(player){
-      player.picks.forEach(function(pick, i){
-        data.forEach(function(title, a){
-          if(pick === title.title && i < 10){
-            if(a === i) player.points += 10;
-            else player.points += (8 - Math.abs(i-a));
-          }
-          else if(pick === title.title )player.points += 1;
-        })     
-      })
+  players.forEach(function(player){
+    player.picks.forEach(function(pick, i){
+      data.forEach(function(title, a){
+        if(pick === title.title && i < 10){
+          if(a === i) player.points += 10;
+          else player.points += (8 - Math.abs(i-a));
+        }
+        else if(pick === title.title )player.points += 1;
+      })     
     })
-  
-    players.sort(function compareNumbers(a, b){return b.points - a.points})
+  })
+
+  players.sort(function compareNumbers(a, b){return b.points - a.points})
 })
 
 app.get("/", function(req, res) {

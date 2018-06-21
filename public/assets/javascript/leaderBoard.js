@@ -37,8 +37,8 @@ display = (players) =>{
       "<button id='"+ i +"' type='button' class='btn btn-sm " + btn+ " btn-block'>" +
         "<div class='row'>" +
           "<div class='col-1'>" + (i +1) + ":</div>" +
-          "<div class='col-6 text-left'>" + player.name + "</div>" +
-          "<div class'col-4'>" + player.points + "pts </div><div class='col-1'>" + guru + "</div>" +
+          "<div class='col-7 text-left'>" + player.name + "</div>" +
+          "<div class'col-3'>" + player.points + "pts </div><div class='col-1'>" + guru + "</div>" +
         "</div>" +
       "</button>"
     );
