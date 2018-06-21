@@ -36,7 +36,10 @@ request("http://www.boxofficemojo.com/seasonal/?view=releasedate&yr=2018&season=
     players.forEach(function(player){
       player.picks.forEach(function(pick, i){
         data.forEach(function(title, a){
-          if(pick === title.title && i < 10)player.points += (10 - Math.abs(i-a));
+          if(pick === title.title && i < 10){
+            if(a === i) player.points += 10;
+            else player.points += (8 - Math.abs(i-a));
+          }
           else if(pick === title.title )player.points += 1;
         })     
       })

@@ -60,7 +60,10 @@ userInfo = (player) =>{
     let point = '-';
     movies.forEach(function(title, a){
       
-      if(pick === title.title && i < 10) point = (10 - Math.abs(i-a));
+      if(pick === title.title && i < 10){
+          if(a === i) point = 10;
+          else point = (8 - Math.abs(i-a));
+      }
       else if(pick === title.title ) point = 1;
     }) 
     data.push({ title: pick, points: point})  
