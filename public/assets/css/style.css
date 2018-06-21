@@ -127,6 +127,6 @@ p { padding-left: 15px }
 
 #displayOptions { position: absolute; right: 45px; top: 50px }
 
-.fa-users:hover, .fa-user-astronaut:hover { cursor: pointer; color: rgb(97, 97, 97) }
+.fa-users:hover, .fa-user-astronaut:hover { cursor: pointer }
 
 .selected { color: rgb(240, 186, 49) }
