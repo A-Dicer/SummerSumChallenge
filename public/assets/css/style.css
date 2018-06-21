@@ -60,10 +60,10 @@ p { padding-left: 15px }
 
 #leaderBoard {	
 	margin: 30px auto 25px;
-	/* height: 248px; */
+	height: 248px;
 	font-size: 15px;
 	max-width: 500px;
-	/* overflow: scroll; */
+	overflow: scroll;
 	padding-bottom: 15px
 }
 
