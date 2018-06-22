@@ -48,11 +48,12 @@ p { padding-left: 15px }
 	max-width: 725px
 }
 
-#boxOffice {
+.td-max{ max-width: 200px }
+
+.movies {
+	max-width: 200px;
+	margin: 10px auto;
 	font-size: 15px;
-	max-width: 375px;
-	margin: 0 auto 25px;
-	padding-left: 15px
 }
 
 .title { padding-left: 15px }
@@ -85,7 +86,7 @@ p { padding-left: 15px }
 
 .guru { width: 10px; position: relative; right: -20px }
 
-.table td, .table th { padding: 0 3px }
+.table td, .table th { padding: 0 3px; border-top: 0}
 
 #playerImg {
 	border-radius: 100%;

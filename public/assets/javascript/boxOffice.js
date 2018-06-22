@@ -6,7 +6,7 @@ $.ajax({
         $("tbody").append(
             "<tr>" +
                 "<th scope='row'>" + (i+1) + "</th>" +    
-                "<td class='text-truncate'>" + item.title + "</td>" + 
+                "<td class='text-truncate td-max' >" + item.title + "</td>" + 
                 "<td>" + item.amount + "</td>" +
             "</tr>"
         );
