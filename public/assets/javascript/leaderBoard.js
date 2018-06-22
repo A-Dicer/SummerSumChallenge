@@ -27,14 +27,21 @@ display = (players) =>{
   players.forEach( function(player, i) { 
     let guru = ""
     let btn = "btn-light"
-    
-    if(players[i-1]){
-      if(player.points === players[i-1].points && player.perfect === players[i-1].perfect) same += 1;
-      else {
-        position += same; 
-        same = 1;
-      }
-    }
+
+    players[i-1]
+    ? 
+      player.points === players[i-1].points && player.perfect === players[i-1].perfect
+      ? same += 1
+      : ( position += same, same = 1 )
+    : null
+
+    // if(players[i-1]){
+    //   if(player.points === players[i-1].points && player.perfect === players[i-1].perfect) same += 1;
+    //   else {
+    //     position += same; 
+    //     same = 1;
+    //   }
+    // }
 
     if(player.guru) guru = "<i class='fas fa-user-astronaut guru'></i>";
     if(i === 0) btn = "btn-info";
@@ -82,8 +89,10 @@ userInfo = (player) =>{
   data.forEach( function(pick, i) {
     let line = ''
     if(i === 9) line = '<hr>'
-    if(pick.points === '-') icon = " <i class='far fa-times-circle'></i>";
-    else icon =  "<i class='far fa-check-circle'></i>";
+
+    pick.points === '-'
+    ? icon = " <i class='far fa-times-circle'></i>"
+    : icon =  "<i class='far fa-check-circle'></i>"
     
     $("#picks").append(
       "<div class='row uds'>" +

@@ -13,26 +13,25 @@ app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(express.static(__dirname + '/public'));
 
-
-
-
 let data =  []
 
-request("http://www.boxofficemojo.com/seasonal/?chart=&season=Spring&yr=2018&view=releasedate", function(error, response, html) {
-  const $ = cheerio.load(html);
-  $('div#body').children('center').children('table').children('tbody').children().each(function(i, element) {
-
-    if(i < 2 && i > 0) {
-      
-    const title = $(element).children().eq(1).text();
-    const amt = $(element).children().eq(3).text();
-    let movieInfo = { title: title, amount: amt}
-    data.push(movieInfo)
-    }
+avengers = () => {
+  data = []
+  
+  request("http://www.boxofficemojo.com/seasonal/?chart=&season=Spring&yr=2018&view=releasedate", function(error, response, html) {
+    const $ = cheerio.load(html);
+    $('div#body').children('center').children('table').children('tbody').children().each(function(i, element) {
+      if(i < 2 && i > 0) {  
+      const title = $(element).children().eq(1).text();
+      const amt = $(element).children().eq(3).text();
+      let movieInfo = { title: title, amount: amt}
+      data.push(movieInfo)
+      }
+    })
+    summer();
   })
-  summer();
-})
- 
+}
+
 summer = () => {
   request("http://www.boxofficemojo.com/seasonal/?view=releasedate&yr=2018&season=Summer", function(error, response, html) {
     const $ = cheerio.load(html);
@@ -66,6 +65,9 @@ summer = () => {
     })
   })
 }
+
+avengers();
+setInterval(avengers, 43200000);
 
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "index.html"));
