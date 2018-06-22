@@ -18,6 +18,7 @@ module.exports = [
             'Sicario: Day of the Soldado'
         ],
         points: 0,
+        perfect: 0,
         guru: true
     },
     {
@@ -39,6 +40,7 @@ module.exports = [
             'Tag'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -60,6 +62,7 @@ module.exports = [
             'The Meg'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -81,6 +84,7 @@ module.exports = [
             'Sicario: Day of the Soldado'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -102,6 +106,7 @@ module.exports = [
             "Ocean's 8"                 
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -123,6 +128,7 @@ module.exports = [
             'Sorry to Bother You'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -144,6 +150,7 @@ module.exports = [
             "The Meg"
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -165,6 +172,7 @@ module.exports = [
             "Disney's Christopher Robin"   
         ],
         points: 0,
+        perfect: 0,
         guru: false
     }, 
     {
@@ -186,6 +194,7 @@ module.exports = [
             "Ocean's 8"  
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -207,6 +216,7 @@ module.exports = [
             'Sicario: Day of the Soldado'   
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -228,6 +238,7 @@ module.exports = [
             'Teen Titans Go! To The Movies'  
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -249,6 +260,7 @@ module.exports = [
             'Hereditary'  
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -270,6 +282,7 @@ module.exports = [
             'Action Point' 
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -291,6 +304,7 @@ module.exports = [
             'Tag'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -312,6 +326,7 @@ module.exports = [
             'Slender Man'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -333,6 +348,7 @@ module.exports = [
             'The First Purge'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -354,6 +370,7 @@ module.exports = [
             'The First Purge'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -375,6 +392,7 @@ module.exports = [
             'Life of the Party '
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -396,6 +414,7 @@ module.exports = [
             'Uncle Drew'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -417,6 +436,7 @@ module.exports = [
             'The First Purge'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },	
     {
@@ -438,6 +458,7 @@ module.exports = [
             'The Equalizer 2'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -459,6 +480,7 @@ module.exports = [
             'Hotel Transylvania 3: Summer',
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -480,6 +502,7 @@ module.exports = [
             'Skyscraper'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -501,6 +524,7 @@ module.exports = [
             'The First Purge'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -522,6 +546,7 @@ module.exports = [
             'The First Purge'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -543,6 +568,7 @@ module.exports = [
             'The Happytime Murders' 
         ],
         points: 0,
+        perfect: 0,
         guru: true
     },
     {
@@ -564,6 +590,7 @@ module.exports = [
             'Tag'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },	
     {
@@ -585,6 +612,7 @@ module.exports = [
             'Sicario: Day of the Soldado'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -606,6 +634,7 @@ module.exports = [
             'Tag'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -627,6 +656,7 @@ module.exports = [
             'The First Purge'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -648,6 +678,7 @@ module.exports = [
             'Hotel Transylvania 3: Summer',
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -669,6 +700,7 @@ module.exports = [
             'Bad Samaritan' 
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -690,6 +722,7 @@ module.exports = [
             "Won't You Be My Neighbor?"
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -711,6 +744,7 @@ module.exports = [
             'Mile 22'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -732,6 +766,7 @@ module.exports = [
             'The Meg'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -753,6 +788,7 @@ module.exports = [
             "Won't You Be My Neighbor?"
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -774,6 +810,7 @@ module.exports = [
             "Ocean's 8"
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -795,6 +832,7 @@ module.exports = [
             'Upgrade'
         ],
         points: 0,
+        perfect: 0,
         guru: true
     },
     { 
@@ -816,6 +854,7 @@ module.exports = [
             'Teen Titans Go! To The Movies'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -837,6 +876,7 @@ module.exports = [
             "Disney's Christopher Robin"
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -858,6 +898,7 @@ module.exports = [
             "Won't You Be My Neighbor?"
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -879,6 +920,7 @@ module.exports = [
             'The Meg'
         ],
         points: 0,
+        perfect: 0,
         guru: true
     },
     {
@@ -900,6 +942,7 @@ module.exports = [
             'Slender Man'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -921,6 +964,7 @@ module.exports = [
             'Uncle Drew'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -942,6 +986,7 @@ module.exports = [
             'Tag'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -963,6 +1008,7 @@ module.exports = [
             'Overboard (2018)'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {			
@@ -984,6 +1030,7 @@ module.exports = [
             'Hotel Transylvania 3: Summer'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1005,6 +1052,7 @@ module.exports = [
             'Hotel Transylvania 3: Summer'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1026,6 +1074,7 @@ module.exports = [
             "Disney's Christopher Robin"
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1047,6 +1096,7 @@ module.exports = [
             'Sicario: Day of the Soldado'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1068,6 +1118,7 @@ module.exports = [
             'Tag'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1089,6 +1140,7 @@ module.exports = [
             'Teen Titans Go! To The Movies'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1110,6 +1162,7 @@ module.exports = [
             'Life of the Party '
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1131,6 +1184,7 @@ module.exports = [
             'Mamma Mia: Here We Go Again!'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1152,6 +1206,7 @@ module.exports = [
             'Deadpool 2'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1173,6 +1228,7 @@ module.exports = [
             'The Equalizer 2'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1194,6 +1250,7 @@ module.exports = [
             'Tag'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1215,6 +1272,7 @@ module.exports = [
             'Tag'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1236,6 +1294,7 @@ module.exports = [
             'Hereditary'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1257,6 +1316,7 @@ module.exports = [
             'Mamma Mia: Here We Go Again!'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1278,6 +1338,7 @@ module.exports = [
             "Disney's Christopher Robin"
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
     {
@@ -1299,6 +1360,7 @@ module.exports = [
             'Skyscraper'
         ],
         points: 0,
+        perfect: 0,
         guru: true
     },
     {
@@ -1320,6 +1382,7 @@ module.exports = [
             'Mamma Mia: Here We Go Again!'
         ],
         points: 0,
+        perfect: 0,
         guru: false
     },
 ]

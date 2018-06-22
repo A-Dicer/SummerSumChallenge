@@ -50,15 +50,20 @@ summer = () => {
       player.picks.forEach(function(pick, i){
         data.forEach(function(title, a){
           if(pick === title.title && i < 10){
-            if(a === i) player.points += 10;
+            if(a === i) {
+              player.points += 10;
+              player.perfect += 1;
+            }
             else player.points += (8 - Math.abs(i-a));
           }
           else if(pick === title.title )player.points += 1;
         })     
       })
     })
-
-    players.sort(function compareNumbers(a, b){return b.points - a.points})
+    players.sort(function compareNumbers(a, b){  
+      if(a.points === b.points)return b.perfect - a.perfect
+      else return b.points - a.points
+    })
   })
 }
 
