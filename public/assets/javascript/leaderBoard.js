@@ -30,7 +30,10 @@ display = (players) =>{
     
     if(players[i-1]){
       if(player.points === players[i-1].points && player.perfect === players[i-1].perfect) same += 1;
-      else position += same; same = 1;
+      else {
+        position += same; 
+        same = 1;
+      }
     }
 
     if(player.guru) guru = "<i class='fas fa-user-astronaut guru'></i>";
