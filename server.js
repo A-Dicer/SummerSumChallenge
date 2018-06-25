@@ -72,13 +72,13 @@ playerBuild = (group, type) => {
   ? (
     data.forEach((movie, i) => {
       movie.title !== infoCopy.boxoffice[i].title
-      ? (check = true, console.log("change check"))
-      : console.log("didn't change check")
+      ? check = true
+      : null
     }), 
-    console.log('-------------'),
+    
     check
     ? (
-      console.log("check is true"),
+      
       group.forEach((player, i) => {
         infoCopy[type].forEach((copy)=>{
           if(player.name === copy.name){
@@ -101,10 +101,10 @@ playerBuild = (group, type) => {
         infoCopy.gurus = JSON.parse(JSON.stringify(gurus))
       }, 200)
     )
-    : console.log('check is false')
+    : null
   )
   :( 
-    console.log("is this running?"),
+    
     setTimeout(()=>{
       infoCopy.boxoffice = JSON.parse(JSON.stringify(data))
       infoCopy.all = JSON.parse(JSON.stringify(all))
