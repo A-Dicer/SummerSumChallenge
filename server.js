@@ -28,7 +28,7 @@ boxofficeBuild = () => {
   setTimeout(() => {
     playerBuild(all, "all")
     playerBuild(gurus, "gurus")
-  }, 500);
+  }, 700);
 }
 
 playerBuild = (group, type) => {
