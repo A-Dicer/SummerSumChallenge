@@ -19,6 +19,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: true
     },
     {
@@ -41,6 +43,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -63,6 +67,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -85,6 +91,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -107,6 +115,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -129,6 +139,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -151,6 +163,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -173,6 +187,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     }, 
     {
@@ -195,6 +211,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -217,6 +235,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -239,6 +259,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -261,6 +283,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -283,6 +307,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -305,6 +331,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -327,6 +355,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -349,6 +379,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -371,6 +403,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -393,6 +427,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -415,6 +451,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -437,6 +475,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },	
     {
@@ -459,6 +499,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -481,6 +523,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -503,6 +547,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -525,6 +571,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -547,6 +595,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -569,6 +619,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: true
     },
     {
@@ -591,6 +643,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },	
     {
@@ -613,6 +667,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -635,6 +691,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -657,6 +715,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -679,6 +739,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -701,6 +763,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -723,6 +787,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -745,6 +811,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -767,6 +835,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -789,6 +859,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -811,6 +883,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -833,6 +907,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: true
     },
     { 
@@ -855,6 +931,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -877,6 +955,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -899,6 +979,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -921,6 +1003,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: true
     },
     {
@@ -943,6 +1027,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -965,6 +1051,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -987,6 +1075,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1009,6 +1099,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {			
@@ -1031,6 +1123,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1053,6 +1147,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1075,6 +1171,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1097,6 +1195,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1119,6 +1219,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1141,6 +1243,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1163,6 +1267,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1185,6 +1291,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1207,6 +1315,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1229,6 +1339,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1251,6 +1363,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1273,6 +1387,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1295,6 +1411,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1317,6 +1435,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1339,6 +1459,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
     {
@@ -1361,6 +1483,8 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: true
     },
     {
@@ -1383,6 +1507,32 @@ module.exports = [
         ],
         points: 0,
         perfect: 0,
+        movement: "-",
+        direction: "",
         guru: false
     },
+    // {
+    //     name:"by%",
+    //     img: "",
+    //     picks: [
+    //         'Avengers: Infinity War',
+    //         'Incredibles 2',
+    //         'Jurassic World: Fallen Kingdom',
+    //         'Solo: A Star Wars Story',
+    //         'Deadpool 2',
+    //         'Ant-Man and the Wasp',  
+    //         'Mission: Impossible - Fallout', 
+    //         "Ocean's 8",
+    //         'Hotel Transylvania 3: Summer',
+    //         'Skyscraper',
+    //         'Tag',
+    //         'The Equalizer 2',
+    //         'Sicario: Day of the Soldado',
+    //     ],
+    //     points: 0,
+    //     perfect: 0,
+    // movement: "-",
+    // direction: "",
+    //     guru: false
+    // },
 ]

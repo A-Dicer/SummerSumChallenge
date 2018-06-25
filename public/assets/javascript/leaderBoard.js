@@ -2,56 +2,42 @@ let pos = 0; let group; let gurus; let movies;
 
 // Gets players from api ----------------------------------------------------------------
 $.ajax({ url: "/players", method: "GET"})
-  .done(function(players) { 
- 
+  .done((players) => { 
     group = players
-    gurus = players.filter(player => player.guru)
-
     display(players);
-    setTimeout(function(){ userInfo(players[0])}, 100)
-
+    setTimeout(() => { userInfo(players[0])}, 100)
   });
+
+  $.ajax({ url: "/gurus", method: "GET"})
+  .done((res) => { gurus = res });
+
 
 // Gets box office results from api -----------------------------------------------------
 $.ajax({ url: "/boxoffice", method: "GET"})
-  .done(function(res){ movies = res });
+  .done((res) => { movies = res });
 
 // Function for displaying information into leader board --------------------------------
-display = (players) =>{
-
-  let position = 1
-  let same = 1
+display = (players) => {
 
   $("#leaderBoard").html(' ')
-  
-  players.forEach( function(player, i) { 
+
+  players.forEach((player, i) => { 
     let guru = ""
     let btn = "btn-light"
+    let move = "-"
 
-    players[i-1]
-    ? 
-      player.points === players[i-1].points && player.perfect === players[i-1].perfect
-      ? same += 1
-      : ( position += same, same = 1 )
-    : null
-
-    // if(players[i-1]){
-    //   if(player.points === players[i-1].points && player.perfect === players[i-1].perfect) same += 1;
-    //   else {
-    //     position += same; 
-    //     same = 1;
-    //   }
-    // }
-
-    if(player.guru) guru = "<i class='fas fa-user-astronaut guru'></i>";
+    if(player.guru) guru = "<i class='fas fa-user-astronaut guru'></i> ";
     if(i === 0) btn = "btn-info";
+    if(player.direction === "up") move = "<i class='fas fa-arrow-up'></i> " + player.movement
+    if(player.direction === "down") move = "<i class='fas fa-arrow-down'></i> " + player.movement
 
     $("#leaderBoard").append(
       "<button id='"+ i +"' type='button' class='btn btn-sm " + btn+ " btn-block'>" +
         "<div class='row'>" +
-          "<div class='col-1'>" + position + ":</div>" +
-          "<div class='col-7 text-left'>" + player.name + "</div>" +
-          "<div class'col-3'>" + player.points + "pts </div><div class='col-1'>" + guru + "</div>" +
+          "<div class='col-1'>" + player.pos + ":</div>" +
+          "<div class='col-7 text-left'>" + guru + player.name + "</div>" +
+          "<div class'col-2'>" + player.points + "pts </div>" + 
+          "<div class='col-2'>" + move + "</div>" +   
         "</div>" +
       "</button>"
     );
@@ -70,9 +56,9 @@ userInfo = (player) =>{
   
   let data = []
   
-  player.picks.forEach(function(pick, i){
+  player.picks.forEach((pick, i) => {
     let point = '-';
-    movies.forEach(function(title, a){
+    movies.forEach((title, a) => {
       if(pick === title.title && i < 10){
           if(a === i) point = 10;
           else point = (8 - Math.abs(i-a));
@@ -86,13 +72,13 @@ userInfo = (player) =>{
   $(".card-title").text(player.name + " - " + player.points + " Points")
       
   $("#picks").html(' ')
-  data.forEach( function(pick, i) {
+  data.forEach((pick, i) => {
     let line = ''
     if(i === 9) line = '<hr>'
 
     pick.points === '-'
-    ? icon = " <i class='far fa-times-circle'></i>"
-    : icon =  "<i class='far fa-check-circle'></i>"
+    ? icon = " <i class='far fa-times-circle down'></i>"
+    : icon =  "<i class='far fa-check-circle up'></i>"
     
     $("#picks").append(
       "<div class='row uds'>" +
@@ -106,22 +92,78 @@ userInfo = (player) =>{
 }
 
 // Click function for displaying all users ----------------------------------------------
-$(".fa-users").click(function(){
+$(".fa-users").click(() => {
   
   $(".fa-user-astronaut").removeClass('selected')
   $(".fa-users").addClass('selected')
   
   pos = 0;
   display(group);
-  setTimeout(function(){ userInfo(group[0])}, 100)})
+  setTimeout(() => { userInfo(group[0])}, 100)})
 
 // Click function for displaying only guru's --------------------------------------------
-$(".fa-user-astronaut").click(function(){
+$(".fa-user-astronaut").click(() => {
   
   $(".fa-users").removeClass('selected')
   $(".fa-user-astronaut").addClass('selected')
   
   pos = 0;
   display(gurus);
-  setTimeout(function(){ userInfo(gurus[0])}, 100)
+  setTimeout(() => { userInfo(gurus[0])}, 100)
 })
+
+// $("#test").click(() => {
+//   console.log('clicked')
+//   metrics(1);
+// })
+
+// metrics = (guess) => {
+
+//   info = []
+//   group.forEach((player, i) => {
+    
+//     let filtered
+
+//     i === 0
+//     ? info.push( { movie: player.picks[guess], count: 1 } )
+//     : (
+//       filtered = info.filter((title, a) => title.movie === player.picks[guess]),
+//       filtered.length 
+//       ? info.forEach((check) => { 
+//           if(check.movie === player.picks[guess]) check.count += 1;
+//       })
+//       : info.push( { movie: player.picks[guess], count: 1 } )   
+//     )
+//   })
+
+//   let time = 500; 
+//   info.forEach((entry, n) => {
+  
+
+//    let percent = (entry.count / 63)*100 
+//     percent = percent.toFixed() + "%"
+
+//     console.log(entry.movie + ": " + entry.count + "(" + percent + "%)")
+    
+//     $("#bars-container").append(
+//       "<div class='col bars'>" +
+//         "<div class='col bar-inner' id='bar" + n +"'></div>" +
+//       "</div>"
+//     )
+//     setTimeout(() => {
+//     $("#bar" + n).css("height", percent)
+//     }, time)
+//     time += 500
+//   })
+//   console.log('----------------------------------------------------')
+//   setTimeout(() => {
+//   let next = guess + 1
+//   $("#bars-container").html(' ')
+//   $(".bars").css("height", 0)
+
+//   // next === 10
+//   // ?metrics(0)
+//   // :metrics(next)
+
+//   }, 10000)
+// }
