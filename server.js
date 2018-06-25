@@ -23,7 +23,7 @@ boxofficeBuild = () => {
   data = []
 
   boxofficeScrape("http://www.boxofficemojo.com/seasonal/?chart=&season=Spring&yr=2018&view=releasedate", 2);
-  setTimeout(() => { boxofficeScrape("http://www.boxofficemojo.com/seasonal/?view=releasedate&yr=2018&season=Summer", 10)}, 100);
+  setTimeout(() => { boxofficeScrape("http://www.boxofficemojo.com/seasonal/?view=releasedate&yr=2018&season=Summer", 10)}, 500);
  
   setTimeout(() => {
     playerBuild(all, "all")
