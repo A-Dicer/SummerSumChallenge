@@ -4,16 +4,20 @@ module.exports = [
     "amount": "$667,675,449"
     },
     {
-    "title": "Deadpool 2",
-    "amount": "$300,380,321"
-    },
-    {
     "title": "Incredibles 2",
     "amount": "$293,486,690"
     },
     {
+    "title": "Deadpool 2",
+    "amount": "$300,380,321"
+    },
+    {
     "title": "Solo: A Star Wars Story",
     "amount": "$199,319,870"
+    },
+    {
+    "title": "Jurassic World: Fallen Kingdom",
+    "amount": "$58,678,000"
     },
     {
     "title": "Ocean's 8",
@@ -22,10 +26,6 @@ module.exports = [
     {
     "title": "Book Club",
     "amount": "$64,001,212"
-    },
-    {
-    "title": "Jurassic World: Fallen Kingdom",
-    "amount": "$58,678,000"
     },
     {
     "title": "Life of the Party ",

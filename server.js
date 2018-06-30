@@ -19,9 +19,16 @@ let data =  []
 let all = JSON.parse(JSON.stringify(players))
 let gurus = JSON.parse(JSON.stringify(players.filter(player => player.guru)))
 
+start = () => {
+  data = movies
+  playerBuild(all, "all")
+  playerBuild(gurus, "gurus")
+  setTimeout(boxofficeBuild, 500)
+}
+
+
 boxofficeBuild = () => {
   data = []
-
   boxofficeScrape("http://www.boxofficemojo.com/seasonal/?chart=&season=Spring&yr=2018&view=releasedate", 2);
 }
 
@@ -146,5 +153,5 @@ app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
   
-boxofficeBuild();
+start();
 setInterval(boxofficeBuild, 43200000);
