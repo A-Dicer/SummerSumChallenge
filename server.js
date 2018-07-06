@@ -34,17 +34,19 @@ boxofficeBuild = () => {
 
 playerBuild = (group, type) => {
   group.forEach((player) => {
-    player.points = 0
-      player.picks.forEach((pick, i) => {
-          data.forEach((title, a) => {
-          if(pick === title.title && i < 10){
-              a === i
-              ? (player.points += 10, player.perfect += 1)
-              : player.points += (8 - Math.abs(i-a));
-          }
-          else if(pick === title.title )player.points += 1;
-          })     
-      })
+    player.points = 0;
+    player.perfect = 0;
+
+    player.picks.forEach((pick, i) => {
+        data.forEach((title, a) => {
+        if(pick === title.title && i < 10){
+            a === i
+            ? (player.points += 10, player.perfect += 1)
+            : player.points += (8 - Math.abs(i-a));
+        }
+        else if(pick === title.title )player.points += 1;
+        })     
+    })
   })
 
   group.sort(function compareNumbers(a, b){   
