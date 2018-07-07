@@ -68,7 +68,6 @@ playerBuild = (group, type) => {
   player.pos = position;
   })
 
-  
   let check = false
 
   infoCopy.boxoffice
@@ -81,7 +80,6 @@ playerBuild = (group, type) => {
     
     check
     ? (
-      
       group.forEach((player, i) => {
         infoCopy[type].forEach((copy)=>{
           if(player.name === copy.name){
@@ -106,8 +104,7 @@ playerBuild = (group, type) => {
     )
     : null
   )
-  :( 
-    
+  :(    
     setTimeout(()=>{
       infoCopy.boxoffice = JSON.parse(JSON.stringify(data))
       infoCopy.all = JSON.parse(JSON.stringify(all))
