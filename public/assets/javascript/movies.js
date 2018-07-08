@@ -8,13 +8,14 @@ module.exports = [
     "amount": "$475,361,414"
     },
     {
-    "title": "Deadpool 2",
-    "amount": "$312,871,400"
-    },
-    {
     "title": "Jurassic World: Fallen Kingdom",
     "amount": "$304,757,665"
     },
+    {
+    "title": "Deadpool 2",
+    "amount": "$312,871,400"
+    },
+    
     {
     "title": "Solo: A Star Wars Story",
     "amount": "$209,860,097"
