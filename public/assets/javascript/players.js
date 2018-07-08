@@ -673,7 +673,7 @@ module.exports = [
     },
     {
         name:"Orrie",
-        img: "https://pbs.twimg.com/profile_images/1006306990732316672/N49lb4o6_400x400.jpg",
+        img: "https://pbs.twimg.com/profile_images/1013230453636173826/hkZl5ra-_400x400.jpg",
         picks: [
             'Avengers: Infinity War',
             'Jurassic World: Fallen Kingdom',
@@ -1345,7 +1345,7 @@ module.exports = [
     },
     {
         name:"Garner Montgomery",
-        img: "https://pbs.twimg.com/profile_images/978072959112925184/QeqSxnpx_400x400.jpg",
+        img: "https://pbs.twimg.com/profile_images/1010311047109062656/P74JYnNU_400x400.jpg",
         picks: [
             'Avengers: Infinity War',
             'Incredibles 2',
@@ -1393,7 +1393,7 @@ module.exports = [
     },
     {
         name:"Gideon",
-        img: "https://pbs.twimg.com/profile_images/1003483491970011137/6tMynoBO_400x400.jpg",
+        img: "https://pbs.twimg.com/profile_images/1010983606859288579/npGcY6DB_400x400.jpg",
         picks: [
             'Avengers: Infinity War',
             'Incredibles 2', 
