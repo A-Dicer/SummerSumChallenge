@@ -1,42 +1,42 @@
 module.exports = [
     {
     "title": "Avengers: Infinity War",
-    "amount": "$675,157,041"
+    "amount": "$676,120,394"
     },
     {
     "title": "Incredibles 2",
-    "amount": "$512,620,407"
+    "amount": "$538,107,847"
     },
     {
     "title": "Jurassic World: Fallen Kingdom",
-    "amount": "$341,672,430"
+    "amount": "$366,044,065"
     },
     {
     "title": "Deadpool 2",
-    "amount": "$315,073,033"
+    "amount": "$316,346,805"
     },
     {
     "title": "Solo: A Star Wars Story",
-    "amount": "$211,247,396"
-    },
-    {
-    "title": "Ocean's 8",
-    "amount": "$128,128,741"
+    "amount": "$211,979,799"
     },
     {
     "title": "Ant-Man and the Wasp",
-    "amount": "$92,839,005"
+    "amount": "$136,649,610"
+    },
+    {
+    "title": "Ocean's 8",
+    "amount": "$132,685,183"
     },
     {
     "title": "Book Club",
-    "amount": "$67,344,634"
+    "amount": "$67,838,485"
     },
     {
     "title": "Life of the Party ",
-    "amount": "$52,558,167"
+    "amount": "$52,678,119"
     },
     {
-    "title": "Overboard (2018)",
-    "amount": "$50,316,123"
+    "title": "Tag",
+    "amount": "$51,540,262"
     }
     ]
