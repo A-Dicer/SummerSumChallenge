@@ -26,7 +26,6 @@ start = () => {
   setTimeout(boxofficeBuild, 500)
 }
 
-
 boxofficeBuild = () => {
   data = []
   boxofficeScrape("http://www.boxofficemojo.com/seasonal/?chart=&season=Spring&yr=2018&view=releasedate", 2);
@@ -132,25 +131,12 @@ boxofficeScrape = (url, number) => {
   })
 }
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
+app.get("/", function(req, res) { res.sendFile(path.join(__dirname, "index.html")) });
+app.get("/boxoffice", function(req, res){ res.send(data) })
+app.get("/players", function(req, res){ res.send(all) })
+app.get("/gurus", function(req, res){ res.send(gurus) })
 
-app.get("/boxoffice", function(req, res){
-  res.send(data)
-})
-
-app.get("/players", function(req, res){
-  res.send(all)
-})
-
-app.get("/gurus", function(req, res){
-  res.send(gurus)
-})
-
-app.listen(PORT, function() {
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
-});
+app.listen(PORT, function() { console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`) });
   
 start();
 setInterval(boxofficeBuild, 43200000);
