@@ -24,16 +24,16 @@ module.exports = [
     "amount": "$196,594,775"
     },
     {
-    "title": "Ocean's 8",
-    "amount": "$138,073,527"
-    },
-    {
     "title": "Hotel Transylvania 3: Summer Vacation",
     "amount": "$137,526,894"
     },
     {
     "title": "Mission: Impossible - Fallout",
     "amount": "$129,272,070"
+    },
+    {
+        "title": "Ocean's 8",
+        "amount": "$138,073,527"
     },
     {
     "title": "Mamma Mia! Here We Go Again",
