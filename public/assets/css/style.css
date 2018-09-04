@@ -3,7 +3,6 @@ body {
 	background: linear-gradient(to right, rgb(160, 115, 250),  rgb(99, 17, 171));
 	height: 100vh
 }
-
 .navbar {
 	background: rgb(208, 208, 208);
 	border-bottom: solid #000 2px;
@@ -12,31 +11,25 @@ body {
 	border-radius: 15px 15px 0 0;
 	padding: 0
 }
-
 #links {
 	height: 35px;
 	overflow: hidden;
 	border-radius: 0 12px 0 0
 }
-
 #sscLogo {
 	position: absolute;
 	top: -50px;
 	margin-left: 25px;
 	width: 250px
 }
-
 p { padding-left: 15px }
-
 #dnaLogo { right: -7px }
-
 .logo {
 	width: 50px;
 	position: relative;
 	top: -8px;
 	border: solid #000 2px
 }
-
 #container {
 	border: solid #000 2px;
 	padding-top: 15px;
@@ -47,19 +40,14 @@ p { padding-left: 15px }
 	border-radius: 15px;
 	max-width: 725px
 }
-
 .td-max{ max-width: 200px }
-
 .movies {
 	max-width: 200px;
 	margin: 10px auto;
 	font-size: 15px;
 }
-
 .title { padding-left: 15px }
-
 .amount { margin-left: -25px }
-
 #leaderBoard {	
 	margin: 30px auto 25px;
 	max-height: 460px;
@@ -68,7 +56,6 @@ p { padding-left: 15px }
 	overflow: auto;
 	padding-bottom: 15px
 }
-
 .left-card {
 	background: linear-gradient(to bottom right, rgb(160, 115, 250),  rgb(99, 17, 171));
 	height: 75px;
@@ -76,19 +63,12 @@ p { padding-left: 15px }
 	overflow: hidden;
 	padding: 0;
 }
-
 .card { margin: 0 15px }
-
 .card-title { font-size: 1.05rem }
-
-#about { margin-bottom: 25px }
-
+#about { margin-bottom: 25px; font-size: 15px}
 .data { margin: 0; padding: 0 }
-
 .guru { width: 10px; margin-right: 5px }
-
 .table td, .table th { padding: 0 3px; border-top: 0}
-
 #playerImg {
 	border-radius: 100%;
 	z-index: 4;
@@ -101,7 +81,6 @@ p { padding-left: 15px }
 	margin: 0 auto;
 	margin-bottom: -60px
 }
-
 .userBgImg {
 	width: 100%;
 	padding: 0;
@@ -112,36 +91,23 @@ p { padding-left: 15px }
 	z-index: 0;
 	opacity: .5
  }
-
 .right-side { padding:  25px 0 0 }
-
 .uds { font-size: 15px }
-
 .down { color: rgb(255, 0, 0) }
-
 .up { color: rgb(40, 174, 13) }
-
 #userInfo { padding: 0; margin: 0 }
-
 .btn-sm { border: solid #ccc 1px; margin-bottom: -6px }
-
 #picks { padding: 15px }
-
 #displayOptions {max-width: 500px; margin: 0 auto -30px; padding: 0 15px }
-
 .fa-users:hover, .fa-user-astronaut:hover { cursor: pointer }
-
 .selected { color: rgb(240, 186, 49) }
-
 #graph-container {
 	border-bottom: solid #000 2px;
 	height: 250px;
 	padding: 0;
 	z-index: 0;
 	overflow: hidden;
-	/* box-shadow: 1px 1px 1px 1px #ccc; */
 }
-
 #bars-container {
 	position: absolute;
 	left: 15px;
@@ -149,14 +115,12 @@ p { padding-left: 15px }
 	height: 250px;
 	z-index: 1;
 }
-
 .bars {
 	margin: 0 5%;
 	padding: 0;
 	padding-top: 2px;
 	height: 100%;
 }
-
 .bar-inner {
 	border: solid #000 1px;
 	height: 0%;
@@ -168,42 +132,16 @@ p { padding-left: 15px }
 	color: #fff;
 	font-size: 12px;
 }
-
-.graph-back {
-	height: 25px;
-	border-top: solid #ccc 1px;
-}
-
-.data {
-	margin-top: 25px;
-	padding: 0 15px;
-}
-
+.graph-back {height: 25px; border-top: solid #ccc 1px}
+.data {margin-top: 25px; padding: 0 15px}
 #stat-info {
 	z-index: 2;
 	width: 85%;
 	float: right;
 	font-size: 12px;
 }
-
-.box {
-	border: solid #000 1px;
-	width: 20%;
-	height: 100%;
-}
-
-.c0 {
-	background: linear-gradient(to bottom right, rgb(160, 115, 250),  rgb(99, 17, 171));
-}
-
-.c1 {
-	background: linear-gradient(to bottom right, rgb(115, 250, 248),  rgb(17, 156, 171));
-}
-
-.c2 {
-	background: linear-gradient(to bottom right, rgb(250, 196, 115),  rgb(171, 109, 17));
-}
-
-.c3 {
-	background: linear-gradient(to bottom right, rgb(250, 115, 250),  rgb(171, 17, 171));
-}
+.box {border: solid #000 1px; width: 20%; height: 100%}
+.c0 {background: linear-gradient(to bottom right, rgb(160, 115, 250),  rgb(99, 17, 171))}
+.c1 {background: linear-gradient(to bottom right, rgb(115, 250, 248),  rgb(17, 156, 171))}
+.c2 {background: linear-gradient(to bottom right, rgb(250, 196, 115),  rgb(171, 109, 17))}
+.c3 {background: linear-gradient(to bottom right, rgb(250, 115, 250),  rgb(171, 17, 171))}

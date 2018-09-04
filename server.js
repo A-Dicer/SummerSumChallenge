@@ -23,7 +23,7 @@ start = () => {
   data = movies
   playerBuild(all, "all")
   playerBuild(gurus, "gurus")
-  setTimeout(boxofficeBuild, 500)
+  // setTimeout(boxofficeBuild, 500)
 }
 
 boxofficeBuild = () => {

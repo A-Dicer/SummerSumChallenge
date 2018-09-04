@@ -36,8 +36,8 @@ display = (players) => {
         "<div class='row'>" +
           "<div class='col-1'>" + player.pos + ":</div>" +
           "<div class='col-7 text-left'>" + guru + player.name + "</div>" +
+          "<div class='col-1'></div>" +   
           "<div class'col-2'>" + player.points + "pts </div>" + 
-          "<div class='col-1'>" + move + "</div>" +   
         "</div>" +
       "</button>"
     );
