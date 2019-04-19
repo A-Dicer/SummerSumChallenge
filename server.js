@@ -7,6 +7,7 @@ const players = require('./public/assets/javascript/players.js');
 const movies = require('./public/assets/javascript/movies.js');
 const list = require('./public/assets/javascript/list.js');
 
+//I need to clean all this up.... a lot
 
 const mongoose   = require("mongoose");
 const routes     = require("./routes");
