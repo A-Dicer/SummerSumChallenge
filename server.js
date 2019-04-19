@@ -5,6 +5,11 @@ const request = require("request");
 const cheerio = require("cheerio");
 const players = require('./public/assets/javascript/players.js');
 const movies = require('./public/assets/javascript/movies.js');
+const list = require('./public/assets/javascript/list.js');
+
+
+const mongoose   = require("mongoose");
+const routes     = require("./routes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,6 +18,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 app.use(express.static(__dirname + '/public'));
+app.use(routes);
+
+//------------------------------- Mongoose ----------------------------------------------
+mongoose.Promise = global.Promise;
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/ssc",
+  { useNewUrlParser: true }
+);
 
 let infoCopy = { boxoffice: null, all: null, gurus: null } 
 let data =  []
@@ -131,12 +144,7 @@ boxofficeScrape = (url, number) => {
   })
 }
 
-app.get("/", function(req, res) { res.sendFile(path.join(__dirname, "index.html")) });
-app.get("/boxoffice", function(req, res){ res.send(data) })
-app.get("/players", function(req, res){ res.send(all) })
-app.get("/gurus", function(req, res){ res.send(gurus) })
 
 app.listen(PORT, function() { console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`) });
-  
 start();
-setInterval(boxofficeBuild, 43200000);
+// setInterval(boxofficeBuild, 43200000);

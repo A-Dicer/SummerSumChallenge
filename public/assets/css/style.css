@@ -93,6 +93,7 @@ p { padding-left: 15px }
  }
 .right-side { padding:  25px 0 0 }
 .uds { font-size: 15px }
+
 .down { color: rgb(255, 0, 0) }
 .up { color: rgb(40, 174, 13) }
 #userInfo { padding: 0; margin: 0 }
@@ -145,3 +146,25 @@ p { padding-left: 15px }
 .c1 {background: linear-gradient(to bottom right, rgb(115, 250, 248),  rgb(17, 156, 171))}
 .c2 {background: linear-gradient(to bottom right, rgb(250, 196, 115),  rgb(171, 109, 17))}
 .c3 {background: linear-gradient(to bottom right, rgb(250, 115, 250),  rgb(171, 17, 171))}
+
+.list {margin: 2px}
+
+#boxOffice > .card {margin: 0 auto}
+
+#boxOffice > .card > .card-body > form > button {margin-top: 10px}
+
+#reason {margin-top: 10px; display: none}
+#formCard {height: 110px;  overflow: hidden;}
+
+.row > .col-3 {padding-top: 4px}
+.row > .col-12 > select {margin: 2px 0;}
+
+#formSubmit {margin-top: 5px}
+#userHeader, #picks, #formSubmit, #notTwitInput, #endText {display: none}
+#userHeader {margin-top: 5px;}
+a:not([href]):not([tabindex]) {
+    color: #00f;
+    text-decoration: none;
+}
+.notTwitter {font-size: 12px; margin-top: 3px; cursor: pointer; color: #00f}
+.nameSubmit {font-size: 12px}
