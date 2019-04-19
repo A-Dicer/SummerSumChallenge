@@ -15,8 +15,8 @@ const client = new Twitter({
 router.use("/api", apiRoutes); 
 
 // SignUp Route ---------------------------------------------------
-router.use("/signup", function(req, res) {
-  res.sendFile(path.join(__dirname, "/../signup.html"));
+router.use("/dontlookhere", function(req, res) {
+  res.sendFile(path.join(__dirname, "/../test.html"));
 });
 
 router.use("/twit/:name", function(req, res){ 
@@ -45,7 +45,7 @@ router.use("/twit/:name", function(req, res){
 
 // Index Route ----------------------------------------------------
 router.use(function(req, res) {
-  res.sendFile(path.join(__dirname, "/../index.html"));
+  res.sendFile(path.join(__dirname, "/../signup.html"));
 });
 
 

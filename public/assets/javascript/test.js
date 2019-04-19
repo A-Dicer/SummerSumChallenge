@@ -258,6 +258,6 @@ const testList = [{
     }]
 
 
-//  testList.map((info)=> $.ajax({ url: "/api/list/", method: "post", data: info}))
-    // $.ajax({ url: "/api/list/", method: "post", data: {list: testList}})
-// .done((res) => { console.log(res) });
+ testList.map((info)=> $.ajax({ url: "/api/list/", method: "post", data: info}))
+    $.ajax({ url: "/api/list/", method: "post", data: {list: testList}})
+.done((res) => { console.log(res) });
