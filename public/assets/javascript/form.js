@@ -81,10 +81,15 @@ $(".nameSubmit").on('click', function(event){
     
 })
 
-let mov1; let mov2;
 //Summer Movie List ------------------------------------------------------
 $.ajax({ url: "https://summersum.herokuapp.com/api/list", method: "GET"})
-.done((res) => console.log(res.ruslts));
+.done((res) => { list = res.results.sort(function(a, b){
+    const mov1 = a.title.toLowerCase(), mov2 = b.title.toLowerCase()
+    if (mov1 < mov2) return -1 
+    if (mov1 > mov2) return 1
+    return 0 
+    }), listOptions() 
+});
 
 //Input Change --------------------------------------------------------
 $(".list").on('change',  function(event) {
