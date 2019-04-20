@@ -82,13 +82,9 @@ $(".nameSubmit").on('click', function(event){
 })
 
 //Summer Movie List ------------------------------------------------------
-$.ajax({ url: "/api/list/", method: "GET"})
-.done((res) => { list = res.results.sort(function(a, b){
-    const mov1 = a.title.toLowerCase(), mov2 = b.title.toLowerCase()
-    if (mov1 < mov2) return -1 
-    if (mov1 > mov2) return 1
-    return 0 
-    }), listOptions() 
+$.ajax({ url: "/api/list", method: "GET"})
+.done((res) => {
+    console.log(res)
 });
 
 //Input Change --------------------------------------------------------
