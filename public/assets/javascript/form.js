@@ -82,7 +82,7 @@ $(".nameSubmit").on('click', function(event){
 })
 
 //Summer Movie List ------------------------------------------------------
-$.ajax({ url: "https://summersum.herokuapp.com/api/list", method: "GET"})
+$.ajax({ url: "/api/list", method: "GET"})
 .done((res) => { list = res.results.sort(function(a, b){
     const mov1 = a.title.toLowerCase(), mov2 = b.title.toLowerCase()
     if (mov1 < mov2) return -1 

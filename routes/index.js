@@ -14,11 +14,6 @@ const client = new Twitter({
 // API Routes -----------------------------------------------------
 router.use("/api", apiRoutes); 
 
-// SignUp Route ---------------------------------------------------
-router.use("/dontlookhere", function(req, res) {
-  res.sendFile(path.join(__dirname, "/../test.html"));
-});
-
 router.use("/twit/:name", function(req, res){ 
   const params = {screen_name: req.params.name};
   const path = "https://api.twitter.com/1.1/users/show.json?"
@@ -36,12 +31,6 @@ router.use("/twit/:name", function(req, res){
 });
   
 })
-// router.get("/", function(req, res) { res.sendFile(path.join(__dirname, "index.html")) });
-// router.get("/signup", function(req, res) { res.sendFile(path.join(__dirname, "signup.html")) });
-// router.get("/boxoffice", function(req, res){ res.send(data) })
-// router.get("/players", function(req, res){ res.send(all) })
-// router.get("/gurus", function(req, res){ res.send(gurus) })
-// router.get("/list", function(req, res){ res.send(list) })
 
 // Index Route ----------------------------------------------------
 router.use(function(req, res) {
