@@ -83,8 +83,8 @@ $(".nameSubmit").on('click', function(event){
 
 //Summer Movie List ------------------------------------------------------
 $.ajax({ url: "/api/list", method: "GET"})
-.done((res) => {
-    console.log(res)
+.done((res) => { res.results.map((movie) => console.log(movie.title))
+  
 });
 
 //Input Change --------------------------------------------------------
