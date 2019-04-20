@@ -54,7 +54,6 @@ $(".nameSubmit").on('click', function(event){
     let same = false; 
     event.preventDefault(),
     eventName = event.target.offsetParent.children[0]
-    console.log(eventName.name)
 
     //check to see if name is already used
     $.ajax({ url: "/api/users", method: "GET"})
@@ -178,11 +177,11 @@ movSelect = (value, name) => {
 
     disableCheck.empty.check && disableCheck.dupe.check
     ? (
-        console.log("ready"),
+       
         $("#reason").fadeOut(1000)
     )
     : (
-        console.log(disableCheck),
+        
         disableCheck.empty.check
         ? null
         : (
