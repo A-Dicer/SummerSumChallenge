@@ -83,7 +83,7 @@ $(".nameSubmit").on('click', function(event){
 
 let mov1; let mov2;
 //Summer Movie List ------------------------------------------------------
-$.ajax({ url: "/api/list", method: "GET"})
+$.ajax({ url: "https://summersum.herokuapp.com/api/list", method: "GET"})
 .done((res) => console.log(res.ruslts));
 
 //Input Change --------------------------------------------------------
