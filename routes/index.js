@@ -14,6 +14,10 @@ const client = new Twitter({
 // API Routes -----------------------------------------------------
 router.use("/api", apiRoutes); 
 
+router.use("/players", function(req, res) {
+  res.sendFile(path.join(__dirname, "/../players.html"));
+});
+
 router.use("/twit/:name", function(req, res){ 
   const params = {screen_name: req.params.name};
   const path = "https://api.twitter.com/1.1/users/show.json?"

@@ -53,7 +53,7 @@ $(".notTwitter").on('click', () =>{
 $(".nameSubmit").on('click', function(event){
     let same = false; 
     event.preventDefault(),
-    eventName = event.target.offsetParent.children[0]
+    eventName = event.target.offsetParent.children[0] 
 
     //check to see if name is already used
     $.ajax({ url: "/api/users", method: "GET"})
