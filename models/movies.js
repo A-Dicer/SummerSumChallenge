@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const moviesSchema = new Schema({
     movies: {
         title: { type: String },
-        ammount: { type: Number},
+        ammount: { type: String},
     },
 });
 

@@ -38,7 +38,7 @@ router.use("/twit/:name", function(req, res){
 
 // Index Route ----------------------------------------------------
 router.use(function(req, res) {
-  res.sendFile(path.join(__dirname, "/../signup.html"));
+  res.sendFile(path.join(__dirname, "/../soon.html"));
 });
 
 module.exports = router;

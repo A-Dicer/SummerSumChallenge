@@ -1,22 +1,23 @@
-const request   = require("request");
-const cheerio   = require("cheerio");
 
-boxofficeScrape = (url, number) => {
-    request(url, function(error, response, html) {
-      const $ = cheerio.load(html);
-      $('div#body').children('center').children('table').children('tbody').children().each(function(i, element) {  
-        if(i < number && i > 0) {
-        const title = $(element).children().eq(1).text();
-        const amt = $(element).children().eq(3).text();
-        let movieInfo = { title: title, amount: amt }
-        // data.push(movieInfo)
-        console.log(movieInfo)
-        }
-      })
-    })
-}
 
-boxofficeScrape("http://www.boxofficemojo.com/seasonal/?view=releasedate&yr=2018&season=Summer", 10)
+// boxofficeScrape = (url, number) => {
+//   request(url, function(error, response, html) {
+//     const $ = cheerio.load(html);
+//     $('div#body').children('center').children('table').children('tbody').children().each(function(i, element) {  
+//       if(i < number && i > 0) {
+//       const title = $(element).children().eq(1).text();
+//       const amt = $(element).children().eq(3).text();
+//       let movieInfo = { title: title, amount: amt }
+//       data.push(movieInfo)
+//       }
+//     })
+//     if(number === 2)boxofficeScrape("http://www.boxofficemojo.com/seasonal/?view=releasedate&yr=2018&season=Summer", 10);
+//   })
+// }
+
+$.ajax({ url: "/api/movies/check", method: "GET"}).done((res) => console.log(res.results))
+$.ajax({ url: "/api/movies/", method: "GET"}).done((res) => console.log(res.results))
+
 
 //first thing to do is scrape and get the movies list...
 //this includes 2 scrapes... one for avengers(thanks bro)
