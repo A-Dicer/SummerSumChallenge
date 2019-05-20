@@ -1,15 +1,15 @@
 let pos = 0; let group; let gurus; let movies;
 
 // Gets players from api ----------------------------------------------------------------
-$.ajax({ url: "/players", method: "GET"})
-  .done((players) => { 
-    group = players
-    display(players);
-    setTimeout(() => { userInfo(players[0])}, 100)
+$.ajax({ url: "/api/users", method: "GET"})
+  .done((res) => { 
+    group = res.results
+    display(res.results);
+    setTimeout(() => { userInfo(res.results[0])}, 100)
   });
 
-  $.ajax({ url: "/gurus", method: "GET"})
-  .done((res) => { gurus = res });
+  // $.ajax({ url: "/gurus", method: "GET"})
+  // .done((res) => { gurus = res });
 
 
 // Gets box office results from api -----------------------------------------------------
@@ -25,17 +25,17 @@ display = (players) => {
     let guru = ""
     let btn = "btn-light"
     let move = "-"
-
+    console.log(player)
     if(player.guru) guru = "<i class='fas fa-user-astronaut guru'></i> ";
     if(i === 0) btn = "btn-info";
     if(player.direction === "up") move = "<i class='fas fa-arrow-up'></i> " + player.movement
     if(player.direction === "down") move = "<i class='fas fa-arrow-down'></i> " + player.movement
 
     $("#leaderBoard").append(
-      "<button id='"+ i +"' type='button' class='btn btn-sm " + btn+ " btn-block'>" +
+      "<button id='"+ i +"' type='button' class='btn btn-sm " + btn + " btn-block'>" +
         "<div class='row'>" +
-          "<div class='col-1'>" + player.pos + ":</div>" +
-          "<div class='col-7 text-left'>" + guru + player.name + "</div>" +
+          "<div class='col-1'>1:</div>" +
+          "<div class='col-7 text-left'>" + guru + player.username + "</div>" +
           "<div class='col-1'></div>" +   
           "<div class'col-2'>" + player.points + "pts </div>" + 
         "</div>" +
@@ -58,13 +58,13 @@ userInfo = (player) =>{
   
   player.picks.forEach((pick, i) => {
     let point = '-';
-    movies.forEach((title, a) => {
-      if(pick === title.title && i < 10){
-          if(a === i) point = 10;
-          else point = (8 - Math.abs(i-a));
-      }
-      else if(pick === title.title ) point = 1;
-    }) 
+    // movies.forEach((title, a) => {
+    //   if(pick === title.title && i < 10){
+    //       if(a === i) point = 10;
+    //       else point = (8 - Math.abs(i-a));
+    //   }
+    //   else if(pick === title.title ) point = 1;
+    // }) 
     data.push({ title: pick, points: point})  
   })
 
