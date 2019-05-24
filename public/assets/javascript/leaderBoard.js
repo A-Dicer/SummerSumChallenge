@@ -47,7 +47,6 @@ tally = (data, loc) => {
 movieList = () => {
   $.ajax({ url: "/api/movies/", method: "GET"}).done((res) => { 
     movies = res.results
-    console.log(movies)
     playerBuild()
   })
 }
