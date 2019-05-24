@@ -17,12 +17,20 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
 
+  //------------------------- Create Movies -------------------------------
+  create: function(req, res) {
+    let boxOffice = new Object
+    boxOffice.movies = JSON.parse(req.body.movies)
+    db.Movies
+      .create(boxOffice)
+      .then(dbModel => res.json({results: dbModel}))
+      .catch(err => res.status(422).json(err));
+  },
+
   //-------------------------- Check Movies ------------------------------
   check: function(req, res) {
-    console.log("Checking")
     let data = [];
-    
-    
+
     boxofficeScrape = (url, number) => {
       request(url, function(error, response, html) {
         const $ = cheerio.load(html);
@@ -31,20 +39,15 @@ module.exports = {
           const title = $(element).children().eq(1).text();
           const amt = $(element).children().eq(3).text();
           let movieInfo = { title: title, amount: amt }
-          console.log(movieInfo)
           data.push(movieInfo)
           }
         })
-        console.log("DONE ---------------------")
-        if(number === 2)boxofficeScrape("http://www.boxofficemojo.com/seasonal/?view=releasedate&yr=2018&season=Summer", 10);
+        
+        if(number === 2)boxofficeScrape("http://www.boxofficemojo.com/seasonal/?view=releasedate&yr=2019&season=Summer", 10);
         else res.json({results: data})
       })
     }
 
     boxofficeScrape("http://www.boxofficemojo.com/seasonal/?chart=&season=Spring&yr=2019&view=releasedate", 2)
-
-    // db.Movies.find(req.query)
-    //     .then(dbModel => res.json({results: dbModel, sess: req.session}))
-    //     .catch(err => res.status(422).json(err));
   },
 }

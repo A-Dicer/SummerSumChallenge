@@ -2,10 +2,8 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const moviesSchema = new Schema({
-    movies: {
-        title: { type: String },
-        ammount: { type: String},
-    },
+    date: {type: Date, default: Date.now},
+    movies: [{ type: String }]  
 });
 
 const Movies = mongoose.model("Movies", moviesSchema);

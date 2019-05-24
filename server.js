@@ -1,9 +1,6 @@
 //------------------------------ Requirements -------------------------------------------
 const express   = require("express");
-const path      = require("path");
 const bodyParser = require("body-parser");
-
-
 const mongoose  = require("mongoose");
 const routes    = require("./routes");
 
@@ -27,4 +24,3 @@ mongoose.connect(
 //------------------------------ Start Server -------------------------------------------
 app.listen(PORT, function() { console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`) });
 
-// setInterval(boxofficeBuild, 43200000);

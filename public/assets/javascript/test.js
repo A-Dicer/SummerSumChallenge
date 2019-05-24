@@ -1,44 +1,57 @@
 
 
-// boxofficeScrape = (url, number) => {
-//   request(url, function(error, response, html) {
-//     const $ = cheerio.load(html);
-//     $('div#body').children('center').children('table').children('tbody').children().each(function(i, element) {  
-//       if(i < number && i > 0) {
-//       const title = $(element).children().eq(1).text();
-//       const amt = $(element).children().eq(3).text();
-//       let movieInfo = { title: title, amount: amt }
-//       data.push(movieInfo)
-//       }
-//     })
-//     if(number === 2)boxofficeScrape("http://www.boxofficemojo.com/seasonal/?view=releasedate&yr=2018&season=Summer", 10);
-//   })
-// }
+let oldMovie = []; let newMovie = []; 
+const test =["Avengers: Startgame", "Pokemon Detective Pikachu", "John Wick: Chapter 3 - Parabellum", "The Intruder (2019) ", "Long Shot", "The Hustle", "Uglydolls", "Poms", "A Dog's Journey", "Tolkien"]; 
+let check = false;
 
-$.ajax({ url: "/api/movies/check", method: "GET"}).done((res) => console.log(res.results))
-$.ajax({ url: "/api/movies/", method: "GET"}).done((res) => console.log(res.results))
+saveList = () => (
+    $.ajax({ url: "/api/movies", method: "POST", data: { movies: JSON.stringify(newMovie) }}).done((res) => {  
+        console.log(res.results)
+    })
+)
+
+compareLists = () => {
+    console.log(newMovie)
+    ajax("/api/movies/").done((res) => (
+        //check to see if there is a list in the database
+        res.results.length 
+        ? (
+            //set oldMovies to the most recent list
+            oldMovie = res.results[res.results.length - 1].movies,
+            //scrape new list from boxOffice mojo
+                //make sure scrape worked
+                newMovie.length
+                ? (
+                    //reset check to false
+                    check = false,
+                    //go through and check to see if the old and new list match
+                    newMovie.map((mov, i) => mov != oldMovie[i] ? check = true : null ),
+                    //if they don't match add new list to database
+                    check ? saveList() : console.log('false')
+                )
+                : null
+        )  
+        //if not create the first list in database
+        : saveList()
+        
+    ))
+}
+
+ajax = (url) => $.ajax({ url: url, method: "GET"})
+ajax("/api/movies/check").done((res) => res.results.map(mov => newMovie.push(mov.title)), compareLists)
 
 
-
-
-//first thing to do is scrape and get the movies list...
-//this includes 2 scrapes... one for avengers(thanks bro)
-//the other for the rest of the movies. 
-
-//after scraping we will check to see if the new scrape is diff.
-//if it is different we will run the code to update
-//first players... 
-//go through each player and update movement and pts.
-//after players have been udpated update old' movie list to new movie list. 
-
-//when someone loads the page it should run this. 
-
-//ok, so what all do I really need to happen. 
-//lets figure this out.  Someone visits the site... when they they get there the first thing is...
 
 // ----------- get the current movie list
+
 // -------------------- ajax movie data base to get old list
+
+
+
+
+
 // -------------------- ajax movie/check to get the current movie list 
+
 //------------ check current movie list to see if anything has changed
 //--------------------- compare old and current array movie titles
 //------------ if something has changed

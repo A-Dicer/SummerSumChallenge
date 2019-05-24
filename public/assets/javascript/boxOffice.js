@@ -1,7 +1,7 @@
 
 setTimeout(() => {
     $.ajax({
-        url: "/boxoffice",
+        url: "/movies/check",
         method: "GET"
       }).done(function(res) {
           

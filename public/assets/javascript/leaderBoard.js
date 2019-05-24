@@ -1,31 +1,118 @@
-let pos = 0; let group; let gurus; let movies;
+let pos = 0; let all; let gurus; let movies;
+let previous = { all: null, gurus: null } 
+let current = { all: null, gurus: null } 
 
-// Gets players from api ----------------------------------------------------------------
-$.ajax({ url: "/api/users", method: "GET"})
-  .done((res) => { 
-    group = res.results
-    display(res.results);
-    setTimeout(() => { userInfo(res.results[0])}, 100)
-  });
+// tally --------------------------------------------------------------------------------
+tally = (data, loc) => {
 
-  // $.ajax({ url: "/gurus", method: "GET"})
-  // .done((res) => { gurus = res });
+  data.forEach((player) => {
+    player.points = 0;
+    player.perfect = 0;
 
+    player.picks.forEach((pick, i) => {
+        movies[loc].movies.forEach((title, a) => {
+        if(pick === title && i < 10){
+            a === i
+            ? ( player.points += 10, player.perfect += 1 )
+            : player.points += (8 - Math.abs(i-a));
+        }
+        else if(pick === title) player.points += 1;
+        })     
+    })
+  })
 
-// Gets box office results from api -----------------------------------------------------
-$.ajax({ url: "/boxoffice", method: "GET"})
-  .done((res) => { movies = res });
+  //sort by points
+  data.sort(function compareNumbers(a, b){   
+    if(a.points === b.points) return b.perfect - a.perfect
+    else return b.points - a.points
+  })
 
-// Function for displaying information into leader board --------------------------------
+  let same = 1;
+  let position = 1;
+
+  //find position
+  data.forEach((player, i)=>{
+    data[i-1]
+    ? 
+      player.points === data[i-1].points && player.perfect === data[i-1].perfect
+      ? same += 1
+      : ( position += same, same = 1 )
+    : null
+
+  player.pos = position;
+  })
+}
+
+// movieList ----------------------------------------------------------------------------
+movieList = () => {
+  $.ajax({ url: "/api/movies/", method: "GET"}).done((res) => { 
+    movies = res.results
+    console.log(movies)
+    playerBuild()
+  })
+}
+
+// diff ---------------------------------------------------------------------------------
+diff = (a, b) => {
+  a.forEach((player, i) => {
+    b.forEach((copy)=>{
+      if(player.username === copy.username){
+        if(player.pos === copy.pos){
+          player.movement = "-";
+          player.direction = '';
+        } else if(player.pos < copy.pos) {
+          player.movement = Math.abs(player.pos - copy.pos);
+          player.direction = "up"; 
+        } else {
+          player.movement = Math.abs(player.pos - copy.pos);
+          player.direction = "down";     
+        }
+        // console.log(player.username + ": " + player.pos + " - " + copy.pos + " |  " + player.movement + " - " + player.direction)
+      }
+    })
+  })
+  
+}
+
+// playerBuild --------------------------------------------------------------------------
+playerBuild = () => {
+  $.ajax({ url: "/players", method: "GET"})
+    .done((res) => { 
+      
+      previous.all = JSON.parse(JSON.stringify(res.results))
+      previous.gurus = JSON.parse(JSON.stringify(res.results.filter(player => player.guru)))
+
+      current.all = JSON.parse(JSON.stringify(res.results))
+      current.gurus = JSON.parse(JSON.stringify(res.results.filter(player => player.guru)))
+      
+      tally(previous.all, movies.length-2)
+      tally(current.all, movies.length-1)
+      tally(previous.gurus, movies.length-2)
+      tally(current.gurus, movies.length-1)
+
+      setTimeout(()=>{
+        diff(current.all, previous.all)
+        diff(current.gurus, previous.gurus)
+      }, 300)
+
+      setTimeout(() =>{
+          display(current.all)
+          userInfo(current.all[0])
+      }, 500)
+    });
+}
+ 
+// display ------------------------------------------------------------------------------
 display = (players) => {
 
   $("#leaderBoard").html(' ')
 
-  players.forEach((player, i) => { 
+    players.forEach((player,i) => { 
+
     let guru = ""
     let btn = "btn-light"
     let move = "-"
-    console.log(player)
+
     if(player.guru) guru = "<i class='fas fa-user-astronaut guru'></i> ";
     if(i === 0) btn = "btn-info";
     if(player.direction === "up") move = "<i class='fas fa-arrow-up'></i> " + player.movement
@@ -34,45 +121,44 @@ display = (players) => {
     $("#leaderBoard").append(
       "<button id='"+ i +"' type='button' class='btn btn-sm " + btn + " btn-block'>" +
         "<div class='row'>" +
-          "<div class='col-1'>1:</div>" +
-          "<div class='col-7 text-left'>" + guru + player.username + "</div>" +
-          "<div class='col-1'></div>" +   
+          "<div class='col-1'>" + player.pos +"</div>" +
+          "<div class='col-7 text-left text-truncate'>" + guru + player.username + "</div>" +  
           "<div class'col-2'>" + player.points + "pts </div>" + 
+          "<div class='col-1'>" + move + "</div>" +   
         "</div>" +
       "</button>"
     );
-  })  
+    $("button").click(function(){
+      userInfo(players[$(this).attr('id')]);
+      $("#" + pos).removeClass('btn-info').addClass('btn-light')
+      pos = $(this).attr('id');
+      $(this).removeClass('btn-light').addClass('btn-info')
+    })
 
-  $("button").click(function(){
-    userInfo(players[$(this).attr('id')]);
-    $("#" + pos).removeClass('btn-info').addClass('btn-light')
-    pos = $(this).attr('id');
-    $(this).removeClass('btn-light').addClass('btn-info')
-  })
+    })
 }
 
-// Function for displaying information about selected user ------------------------------
+// userInfo -----------------------------------------------------------------------------
 userInfo = (player) =>{
   
-  let data = []
-  
+  let dataFresh = []
+
   player.picks.forEach((pick, i) => {
     let point = '-';
-    // movies.forEach((title, a) => {
-    //   if(pick === title.title && i < 10){
-    //       if(a === i) point = 10;
-    //       else point = (8 - Math.abs(i-a));
-    //   }
-    //   else if(pick === title.title ) point = 1;
-    // }) 
-    data.push({ title: pick, points: point})  
+    movies[movies.length-1].movies.forEach((title, a) => {
+      if(pick === title && i < 10){
+          if(a === i) point = 10;
+          else point = (8 - Math.abs(i-a));
+      } else if(pick === title) point = 1;
+    }) 
+    dataFresh.push({ title: pick, points: point})  
   })
 
   $("#playerImg, .userBgImg").attr('src', player.img);
-  $(".card-title").text(player.name + " - " + player.points + " Points")
+  $(".card-title").text(player.username + " - " + player.points + " Points")
       
-  $("#picks").html(' ')
-  data.forEach((pick, i) => {
+  $("#pick").html(' ')
+  dataFresh.forEach((pick, i) => {
     let line = ''
     if(i === 9) line = '<hr>'
 
@@ -80,13 +166,12 @@ userInfo = (player) =>{
     ? icon = " <i class='far fa-times-circle down'></i>"
     : icon =  "<i class='far fa-check-circle up'></i>"
     
-    $("#picks").append(
+    $("#pick").append(
       "<div class='row uds'>" +
         "<div class='col-2'>" + icon + "</div>" +
         "<div class='col-8 text-truncate'>" + pick.title + "</div>" +
         "<div class='col-2 text-left'>" + pick.points + "</div>" +
-      "</div>" + line
-      
+      "</div>" + line 
     ); 
   })
 }
@@ -98,8 +183,9 @@ $(".fa-users").click(() => {
   $(".fa-users").addClass('selected')
   
   pos = 0;
-  display(group);
-  setTimeout(() => { userInfo(group[0])}, 100)})
+  display(current.all);
+  setTimeout(() => { userInfo(current.all[0])}, 100)
+})
 
 // Click function for displaying only guru's --------------------------------------------
 $(".fa-user-astronaut").click(() => {
@@ -108,6 +194,8 @@ $(".fa-user-astronaut").click(() => {
   $(".fa-user-astronaut").addClass('selected')
   
   pos = 0;
-  display(gurus);
-  setTimeout(() => { userInfo(gurus[0])}, 100)
+  display(current.gurus);
+  setTimeout(() => { userInfo(current.gurus[0])}, 100)
 })
+
+movieList()
