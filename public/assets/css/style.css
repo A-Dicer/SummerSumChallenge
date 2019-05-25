@@ -49,7 +49,7 @@ p { padding-left: 15px }
 .title { padding-left: 15px }
 .amount { margin-left: -25px }
 #leaderBoard {	
-	margin: 30px auto 25px;
+	margin: 15px auto 25px;
 	max-height: 460px;
 	font-size: 15px;
 	max-width: 500px;

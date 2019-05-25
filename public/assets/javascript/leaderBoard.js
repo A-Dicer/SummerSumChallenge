@@ -96,6 +96,7 @@ playerBuild = () => {
 
       setTimeout(() =>{
           display(current.all)
+          all = current.all
           userInfo(current.all[0])
       }, 500)
     });
@@ -183,6 +184,7 @@ $(".fa-users").click(() => {
   
   pos = 0;
   display(current.all);
+  all = current.all
   setTimeout(() => { userInfo(current.all[0])}, 100)
 })
 
@@ -194,7 +196,19 @@ $(".fa-user-astronaut").click(() => {
   
   pos = 0;
   display(current.gurus);
+  all = current.gurus
   setTimeout(() => { userInfo(current.gurus[0])}, 100)
 })
 
+// Search Bar ---------------------------------------------------------------------------
+$("#search").on('input', function(event) {
+  const { value } = event.target
+  const res = all.filter((player, i) => 
+    player.username.toLowerCase().substr(0, value.length) === value.toLowerCase().trim()
+  )
+  display(res)
+});
+
 movieList()
+
+
