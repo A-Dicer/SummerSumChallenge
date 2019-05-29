@@ -2,6 +2,7 @@ let pos = 0; let all; let gurus; let movies;
 let previous = { all: null, gurus: null } 
 let current = { all: null, gurus: null } 
 
+
 // tally --------------------------------------------------------------------------------
 tally = (data, loc) => {
 
@@ -41,6 +42,9 @@ tally = (data, loc) => {
 
   player.pos = position;
   })
+
+  return data;
+  
 }
 
 // movieList ----------------------------------------------------------------------------
@@ -50,6 +54,9 @@ movieList = () => {
     playerBuild()
   })
 }
+
+
+
 
 // diff ---------------------------------------------------------------------------------
 diff = (a, b) => {
@@ -66,11 +73,9 @@ diff = (a, b) => {
           player.movement = Math.abs(player.pos - copy.pos);
           player.direction = "down";     
         }
-        // console.log(player.username + ": " + player.pos + " - " + copy.pos + " |  " + player.movement + " - " + player.direction)
       }
     })
   })
-  
 }
 
 // playerBuild --------------------------------------------------------------------------
@@ -98,6 +103,7 @@ playerBuild = () => {
           display(current.all)
           all = current.all
           userInfo(current.all[0])
+          stats()
       }, 500)
     });
 }
@@ -122,9 +128,9 @@ display = (players) => {
       "<button id='"+ i +"' type='button' class='btn btn-sm " + btn + " btn-block'>" +
         "<div class='row'>" +
           "<div class='col-1'>" + player.pos +"</div>" +
-          "<div class='col-7 text-left text-truncate'>" + guru + player.username + "</div>" +  
+          "<div class='col-6 text-left text-truncate'>" + guru + player.username + "</div>" +  
           "<div class'col-2'>" + player.points + "pts </div>" + 
-          "<div class='col-1'>" + move + "</div>" +   
+          "<div class='col-3'>" + move + "</div>" +   
         "</div>" +
       "</button>"
     );
@@ -169,8 +175,8 @@ userInfo = (player) =>{
     $("#pick").append(
       "<div class='row uds'>" +
         "<div class='col-2'>" + icon + "</div>" +
-        "<div class='col-8 text-truncate'>" + pick.title + "</div>" +
-        "<div class='col-2 text-left'>" + pick.points + "</div>" +
+        "<div class='col-7 text-truncate'>" + pick.title + "</div>" +
+        "<div class='col-3 text-left'>" + pick.points + "</div>" +
       "</div>" + line 
     ); 
   })
@@ -185,7 +191,7 @@ $(".fa-users").click(() => {
   pos = 0;
   display(current.all);
   all = current.all
-  setTimeout(() => { userInfo(current.all[0])}, 100)
+  userInfo(current.all[0])
 })
 
 // Click function for displaying only guru's --------------------------------------------
@@ -197,7 +203,7 @@ $(".fa-user-astronaut").click(() => {
   pos = 0;
   display(current.gurus);
   all = current.gurus
-  setTimeout(() => { userInfo(current.gurus[0])}, 100)
+  userInfo(current.gurus[0])
 })
 
 // Search Bar ---------------------------------------------------------------------------
@@ -207,8 +213,11 @@ $("#search").on('input', function(event) {
     player.username.toLowerCase().substr(0, value.length) === value.toLowerCase().trim()
   )
   display(res)
+  userInfo(res[0])
 });
 
 movieList()
 
-
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover({ trigger: "hover" });   
+});

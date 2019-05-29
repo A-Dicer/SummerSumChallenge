@@ -91,8 +91,8 @@ p { padding-left: 15px }
 	z-index: 0;
 	opacity: .5
  }
-.right-side { padding:  25px 0 0 }
-.uds { font-size: 15px }
+.right-side { padding:  25px 0 0;}
+.uds { font-size: 15px; margin-top: -3px }
 
 .down { color: rgb(255, 0, 0) }
 .up { color: rgb(40, 174, 13) }
@@ -168,3 +168,37 @@ a:not([href]):not([tabindex]) {
 }
 .notTwitter {font-size: 12px; margin-top: 3px; cursor: pointer; color: #00f}
 .nameSubmit {font-size: 12px}
+#movieStats {position: relative; top: -8px;left: 0px;}
+#testish {padding:  25px 0 0}
+#testish > .card{margin-bottom: 15px}
+#testish > .card > .card-body > .col-md-4 {box-shadow: none;}
+
+.movieImg {
+	border-radius: 14px;
+	width: 100%;
+	padding: 5px 0;
+	margin: 0;
+}
+
+#imgInfo {
+	position: relative;
+	background-color: #fff;
+	width: 100%;
+	top: -50px;
+}
+
+#imgInfo > i {margin: 0 5px; cursor: pointer}
+.popover-header {text-align: center; font-size: 14px}
+.popover-body { text-align: center; font-size: 12px}
+
+@media (max-width: 767px) { 
+    .movieImg {top: -100px;}
+
+	#testish > .card > .card-body > .col-md-4 {
+		overflow: hidden;
+		max-height: 250px;
+		box-shadow: none;
+	}
+
+	#imgInfo { position: absolute;top: 200px }
+}

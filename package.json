@@ -10,7 +10,9 @@
     "nodemon": "^1.11.0"
   },
   "dependencies": {
+    "apexcharts": "^3.7.0",
     "body-parser": "^1.17.2",
+    "chart.js": "^2.8.0",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.15.4",
     "express-session": "^1.15.6",
