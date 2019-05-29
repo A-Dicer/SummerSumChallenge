@@ -145,11 +145,11 @@ getAvg = () => {
 getImdb = () => {
     movieData.forEach((movie) => 
         $.ajax({ 
-            url: `http://www.omdbapi.com/?t=${movie.title.replace("(2019)", "")}&y=2019&apikey=c3f38593`,
+            url: `https://www.omdbapi.com/?t=${movie.title.replace("(2019)", "")}&y=2019&apikey=c3f38593`,
              method: "GET"
         })
         .done((res) => { 
-            movie.img = `http://img.omdbapi.com/?i=${res.imdbID}&h=6000&apikey=c3f38593`  
+            movie.img = `https://img.omdbapi.com/?i=${res.imdbID}&h=6000&apikey=c3f38593`  
         }),
     )
 }
@@ -211,4 +211,4 @@ setInterval(function(){
         : spot = 0
 }, 12000);
 
-setTimeout(() =>{statData(1)}, 2000)
+setTimeout(() =>{statData(1)}, 3000)
