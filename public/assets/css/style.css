@@ -192,9 +192,8 @@ a:not([href]):not([tabindex]) {
 .popover-body { text-align: center; font-size: 12px}
 
 .col-md-4 > .col-12 > button {
-	border: none
-	/* border-color: red;
-	width: 5px */
+	border: none;
+	background: none;	
 }
 
 .fa-circle {
@@ -209,12 +208,12 @@ a:not([href]):not([tabindex]) {
 
 @media (max-width: 767px) { 
     .movieImg {top: -100px;}
-
+	#userStats {display: none}
 	#testish > .card > .card-body > .col-md-4 {
 		overflow: hidden;
 		max-height: 250px;
 		box-shadow: none;
 	}
 
-	#imgInfo { position: absolute;top: 200px }
+	#imgInfo { position: absolute; top: 200px }
 }

@@ -22,12 +22,12 @@ let movieStats = {
 //object for users Chart -------------------------------------------
 let userStats = {
     chart: {
-      height: 265,
+      height: 400,
       type: 'line',
       zoom: {enabled: false},
       toolbar: {show: false}
     },
-    legend: {position: 'top', horizontalAlign: 'right'},
+    legend: { position: 'top', horizontalAlign: 'right'},
     dataLabels: {enabled: false},
     stroke: {curve: 'straight'},
     series: [],
