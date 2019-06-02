@@ -168,7 +168,7 @@ a:not([href]):not([tabindex]) {
 }
 .notTwitter {font-size: 12px; margin-top: 3px; cursor: pointer; color: #00f}
 .nameSubmit {font-size: 12px}
-#movieStats {position: relative; top: -8px;left: 0px;}
+#movieStats {position: relative;left: 0px;}
 #testish {padding:  25px 0 0}
 #testish > .card{margin-bottom: 15px}
 #testish > .card > .card-body > .col-md-4 {box-shadow: none;}
@@ -190,6 +190,22 @@ a:not([href]):not([tabindex]) {
 #imgInfo > i {margin: 0 5px; cursor: pointer}
 .popover-header {text-align: center; font-size: 14px}
 .popover-body { text-align: center; font-size: 12px}
+
+.col-md-4 > .col-12 > button {
+	border: none
+	/* border-color: red;
+	width: 5px */
+}
+
+.fa-circle {
+	font-size: 8px;
+	padding: 0; margin: 0
+}
+
+.fa-dot-circle {
+	padding: 0; margin: 0
+}
+
 
 @media (max-width: 767px) { 
     .movieImg {top: -100px;}

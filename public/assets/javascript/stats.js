@@ -1,3 +1,5 @@
+
+
 let movieData = []; let userData = []
 
 //object for movie Chart -------------------------------------------
@@ -26,13 +28,10 @@ let userStats = {
       toolbar: {show: false}
     },
     legend: {position: 'top', horizontalAlign: 'right'},
-    dataLabels: { enabled: false},
+    dataLabels: {enabled: false},
     stroke: {curve: 'straight'},
-    series: [
-        { name: "Top10 Average",data: []},
-        { name: "Perfect Average",data: []},
-        { name: "Total Points Average",data: []}
-    ],
+    series: [],
+    colors: ['#33b2df', '#AB61FF', '#d4526e', '#13d8aa', '#A5978B', '#2b908f', '#f9a3a4', '#90ee7e', '#f48024'],
     grid: {
       row: {
         colors: ['#f3f3f3', 'transparent'], 
@@ -42,6 +41,14 @@ let userStats = {
     xaxis: {
         labels: {show: false},
         categories: [],
+    },
+    yaxis: {
+        labels: {
+            formatter: function (value) {
+                if(value === 0) return `$0`
+                else if(value !== null) return `$${value} (K)`;
+            }
+        } 
     }
   }
 
@@ -56,7 +63,7 @@ stats = () => {
             player.picks.forEach(((list, a) => 
                 a < 9 
                 ?  
-                    list === movie 
+                    list === movie.title 
                     ? (
                         correct++, 
                         !movPos[a]
@@ -65,7 +72,7 @@ stats = () => {
                     )
                     : null 
                 : 
-                    list === movie 
+                    list === movie.title
                     ? dark++ 
                     : null
             )
@@ -73,11 +80,12 @@ stats = () => {
 
        let filtered = movPos.filter((el) => {return el != null});
         filtered.sort(function(a, b){return b.val - a.val});
-        let perfect =  current.all.filter((player) => movie === player.picks[i])
+        let perfect =  current.all.filter((player) => movie.title === player.picks[i])
         
         
         data = {
-            title: movie,
+            title: movie.title,
+            amount: movie.amount,
             top10: correct,
             perf: perfect.length,
             dark: dark,
@@ -123,16 +131,15 @@ getAvg = () => {
 
         let d = new Date(group.date)
         dateOptions = { month: 'long', day: 'numeric' };
-        userStats.xaxis.categories.push(d.toLocaleDateString("en-US" , dateOptions))
         
         group.movies.forEach((title, i)=>{
             
             correct = 0;
             current.all.forEach((player =>  
-                player.picks.forEach(((list, i) => i<9 ? list === title ? correct++ : null : null)
+                player.picks.forEach(((list, i) => i<9 ? list === title.title ? correct++ : null : null)
             )))
             
-            let perfect =  current.all.filter((player) => title === player.picks[i])
+            let perfect =  current.all.filter((player) => title.title === player.picks[i])
            
             info.top10.push(correct)
             info.perfect.push(perfect.length)
@@ -157,12 +164,14 @@ getImdb = () => {
 //builds Charts ----------------------------------------------------
 statData = (pos) => {
     
-    movieData.forEach ((movie) => {
+    movieData.forEach ((movie, i) => {
         movieStats.series[0].data.push(movie.top10)
         movieStats.series[1].data.push(movie.perf)
+        movieStats.xaxis.categories.push(movie.title)
+        movie.title != "Avengers: Endgame"
+        ? userStats.series.push({name: movie.title, data: []})
+        : null
     })
-
-    movieStats.xaxis.categories = movies[movies.length-1].movies
 
     var chart = new ApexCharts(
         document.querySelector("#movieStats"),
@@ -170,21 +179,26 @@ statData = (pos) => {
     );
 
     chart.render();
+    
+    movies.forEach((movieData, i)=> {
+        userStats.xaxis.categories.push(`Day ${i}`)
 
-    userData.forEach((numbers)=> {
-
-        let sum = numbers.top10.reduce((a, b) => { return a + b })
-        let avg = sum / numbers.top10.length 
-        userStats.series[0].data.push(Math.round(avg))
-
-        sum = numbers.perfect.reduce((a, b) => { return a + b })
-        avg = sum / numbers.perfect.length 
-        userStats.series[1].data.push(Math.round(avg))
-
-        sum = numbers.total.reduce((a, b) => { return a + b })
-        avg = sum / numbers.total.length 
-        userStats.series[2].data.push(Math.round(avg))
+        movieData.movies.forEach((movieInfo)=> {
+            userStats.series.forEach((series)=>{
+                series.name === movieInfo.title
+                ? 
+                (   
+                    movieInfo.amount = movieInfo.amount.replace("$", ""),
+                    series.data.push(parseInt(movieInfo.amount, 10))
+                )
+                : null
+            })  
+        })
     })
+    userStats.xaxis.categories.push(`Day ${movies.length}`)
+    
+    userStats.series.forEach((series)=>{series.data.unshift(0)})
+
     var chart = new ApexCharts(
         document.querySelector("#userStats"),
         userStats
@@ -195,6 +209,8 @@ statData = (pos) => {
 
 //updates dom with imdb img ----------------------------------------
 statImg = (pos) => {
+    $(`.movBtn`).addClass("fa-circle").removeClass("fa-dot-circle")
+    $(`#c${pos}`).addClass("fa-dot-circle").removeClass("fa-circle")
     $(".movieImg").attr("src", movieData[pos].img)
     $(".fa-user").attr("data-content", `${movieData[pos].top10} (${movieData[pos].topPerc}%)`).html(` ${movieData[pos].top10}`)
     $(".fa-check").attr("data-content", `${movieData[pos].perf} (${movieData[pos].perfPerc}%)`).html(` ${movieData[pos].perf}`)
@@ -204,11 +220,11 @@ statImg = (pos) => {
 
 //interval to change img -------------------------------------------
 let spot = 1
-setInterval(function(){ 
-    statImg(spot)
-    spot < 9
-        ? spot++ 
-        : spot = 0
-}, 12000);
+const movieSwap = setInterval(function(){statImg(spot), spot < 9 ? spot++ : spot = 0}, 12000);
+
+$(".movBtn").click((event)=>{
+    clearInterval(movieSwap);
+    statImg(event.target.value)
+})
 
 setTimeout(() =>{statData(1)}, 3000)

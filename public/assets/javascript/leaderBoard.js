@@ -12,12 +12,12 @@ tally = (data, loc) => {
 
     player.picks.forEach((pick, i) => {
         movies[loc].movies.forEach((title, a) => {
-        if(pick === title && i < 10){
+        if(pick === title.title && i < 10){
             a === i
             ? ( player.points += 10, player.perfect += 1 )
             : player.points += (8 - Math.abs(i-a));
         }
-        else if(pick === title) player.points += 1;
+        else if(pick === title.title) player.points += 1;
         })     
     })
   })
@@ -54,9 +54,6 @@ movieList = () => {
     playerBuild()
   })
 }
-
-
-
 
 // diff ---------------------------------------------------------------------------------
 diff = (a, b) => {
@@ -125,7 +122,7 @@ display = (players) => {
     if(player.direction === "down") move = "<i class='fas fa-arrow-down'></i> " + player.movement
 
     $("#leaderBoard").append(
-      "<button id='"+ i +"' type='button' class='btn btn-sm " + btn + " btn-block'>" +
+      "<button id='"+ i +"' type='button' class='btn btn-sm userBtn " + btn + " btn-block'>" +
         "<div class='row'>" +
           "<div class='col-1'>" + player.pos +"</div>" +
           "<div class='col-6 text-left text-truncate'>" + guru + player.username + "</div>" +  
@@ -134,7 +131,7 @@ display = (players) => {
         "</div>" +
       "</button>"
     );
-    $("button").click(function(){
+    $(".userBtn").click(function(){
       userInfo(players[$(this).attr('id')]);
       $("#" + pos).removeClass('btn-info').addClass('btn-light')
       pos = $(this).attr('id');
@@ -152,10 +149,10 @@ userInfo = (player) =>{
   player.picks.forEach((pick, i) => {
     let point = '-';
     movies[movies.length-1].movies.forEach((title, a) => {
-      if(pick === title && i < 10){
+      if(pick === title.title && i < 10){
           if(a === i) point = 10;
           else point = (8 - Math.abs(i-a));
-      } else if(pick === title) point = 1;
+      } else if(pick === title.title) point = 1;
     }) 
     dataFresh.push({ title: pick, points: point})  
   })
