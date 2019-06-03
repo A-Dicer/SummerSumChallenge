@@ -39,7 +39,12 @@ let userStats = {
       },
     },
     xaxis: {
-        labels: {show: false},
+        labels: {
+            show: false,
+            formatter: function (value) {
+                return `Day ${value-1}`
+            }
+        },
         categories: [],
     },
     yaxis: {
@@ -168,9 +173,6 @@ statData = (pos) => {
         movieStats.series[0].data.push(movie.top10)
         movieStats.series[1].data.push(movie.perf)
         movieStats.xaxis.categories.push(movie.title)
-        movie.title != "Avengers: Endgame"
-        ? userStats.series.push({name: movie.title, data: []})
-        : null
     })
 
     var chart = new ApexCharts(
@@ -179,32 +181,19 @@ statData = (pos) => {
     );
 
     chart.render();
-    
-    movies.forEach((movieData, i)=> {
-        userStats.xaxis.categories.push(`Day ${i}`)
 
-        movieData.movies.forEach((movieInfo)=> {
-            userStats.series.forEach((series)=>{
-                series.name === movieInfo.title
-                ? 
-                (   
-                    movieInfo.amount = movieInfo.amount.replace("$", ""),
-                    series.data.push(parseInt(movieInfo.amount, 10))
-                )
-                : null
-            })  
-        })
+    $.ajax({ url: `/api/movies/daily/`,method: "GET"})
+    .done((res) => { 
+        userStats.series = res.results
+        userStats.series.forEach((series)=>{series.data.unshift(0)})
+        var chart = new ApexCharts(
+            document.querySelector("#userStats"),
+            userStats
+        );
+    
+        chart.render();
     })
-    userStats.xaxis.categories.push(`Day ${movies.length}`)
-    
-    userStats.series.forEach((series)=>{series.data.unshift(0)})
-
-    var chart = new ApexCharts(
-        document.querySelector("#userStats"),
-        userStats
-    );
-
-    chart.render();
+   
 }
 
 //updates dom with imdb img ----------------------------------------
