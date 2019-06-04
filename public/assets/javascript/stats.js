@@ -29,7 +29,7 @@ let userStats = {
     },
     legend: { position: 'top', horizontalAlign: 'right'},
     dataLabels: {enabled: false},
-    stroke: {curve: 'straight'},
+    stroke: {curve: 'straight', lineCap: 'round',},
     series: [],
     colors: ['#33b2df', '#AB61FF', '#d4526e', '#13d8aa', '#A5978B', '#2b908f', '#f9a3a4', '#90ee7e', '#f48024'],
     grid: {

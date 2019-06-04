@@ -36,7 +36,7 @@ module.exports = {
           boxofficeScrape("http://www.boxofficemojo.com/seasonal/?chart=&season=Spring&yr=2019&view=releasedate", 2, dbModel)
         })
         .catch(err => res.status(422).json(err));
-    
+
     finish = (oldInfo, newInfo) => {
       // console.log(oldInfo[oldInfo.length-1])
 
@@ -52,7 +52,7 @@ module.exports = {
                     //reset check to false
                     check = false,
                     //go through and check to see if the old and new list match
-                    newInfo.map((mov, i) => {mov.title != oldMovie[i].title || mov.amount != oldMovie[i].amount ? check = true : null }), 
+                    newInfo.map((mov, i) => {mov.title != oldMovie[i].title ? check = true : null }), 
                     
                     //if they don't match add new list to database
                     check 
