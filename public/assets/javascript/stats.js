@@ -51,7 +51,9 @@ let userStats = {
         labels: {
             formatter: function (value) {
                 if(value === 0) return `$0`
-                else if(value !== null) return `$${value} (K)`;
+                else if(value === 1000) return `$1 (B)`
+                else if(value !== null) return `$${value} (M)`;
+
             }
         } 
     }

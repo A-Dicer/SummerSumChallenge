@@ -119,7 +119,7 @@ module.exports = {
 
     db.Movies.find(req.query)
         .then(dbModel => {
-          idGet(dbModel[dbModel.length -1].movies, 1)
+          idGet(dbModel[dbModel.length -1].movies, 0)
         })
         .catch(err => res.status(422).json(err));
   }
