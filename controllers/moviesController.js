@@ -43,7 +43,7 @@ module.exports = {
       oldInfo.length && newInfo.length 
         ? (
             //set oldMovies to the most recent list
-            oldMovie = JSON.parse(JSON.stringify(oldInfo[oldInfo.length- 1].movies,)),
+            oldMovie = JSON.parse(JSON.stringify(oldInfo[oldInfo.length- 1].movies)),
             
             //scrape new list from boxOffice mojo
                 //make sure scrape worked

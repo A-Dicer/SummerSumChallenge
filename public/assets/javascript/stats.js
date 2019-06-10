@@ -1,11 +1,11 @@
+let movieData = []; let userData = []; let movieInfo
 
-
-let movieData = []; let userData = []
+$.ajax({url: `/movieData/`,method: "GET"}).done((res) => {movieInfo = res.results})
 
 //object for movie Chart -------------------------------------------
 let movieStats = {
     chart: {
-        height: 320,
+        height: 200,
         type: 'bar',
         toolbar: {show: false}
     },
@@ -14,9 +14,13 @@ let movieStats = {
     series: [
         {name: 'Top10', data: []},
         {name: 'Perfect', data: []}],
-    xaxis: {categories: [],},
+    xaxis: {
+        categories: [],
+        labels: {show: false} 
+    },
    
     legend: {show: false},
+   
 }
 
 //object for users Chart -------------------------------------------
@@ -68,7 +72,7 @@ stats = () => {
         movPos = []
         current.all.forEach((player =>  
             player.picks.forEach(((list, a) => 
-                a < 9 
+                a < 10
                 ?  
                     list === movie.title 
                     ? (
@@ -85,7 +89,7 @@ stats = () => {
             )
         )))
 
-       let filtered = movPos.filter((el) => {return el != null});
+        let filtered = movPos.filter((el) => {return el != null});
         filtered.sort(function(a, b){return b.val - a.val});
         let perfect =  current.all.filter((player) => movie.title === player.picks[i])
         
@@ -96,6 +100,7 @@ stats = () => {
             top10: correct,
             perf: perfect.length,
             dark: dark,
+            // img: getImdb(movie.title),
             topPerc: Math.round((correct / 112) * 100),
             perfPerc: Math.round((perfect.length / 112) * 100),
             darkPerc: Math.round((dark / 112) * 100),
@@ -130,6 +135,7 @@ getAvg = () => {
         let playerInfo = tally(playerDupe, i)
 
         let info = {}
+
         info.top10 = []
         info.perfect = []
         info.total = []
@@ -143,7 +149,7 @@ getAvg = () => {
             
             correct = 0;
             current.all.forEach((player =>  
-                player.picks.forEach(((list, i) => i<9 ? list === title.title ? correct++ : null : null)
+                player.picks.forEach(((list, i) => i<10 ? list === title.title ? correct++ : null : null)
             )))
             
             let perfect =  current.all.filter((player) => title.title === player.picks[i])
@@ -156,21 +162,25 @@ getAvg = () => {
 }
 
 //gets imdb img ----------------------------------------------------
-getImdb = () => {
+getImdb = (title) => {
+    
     movieData.forEach((movie) => 
         $.ajax({ 
             url: `https://www.omdbapi.com/?t=${movie.title.replace("(2019)", "")}&y=2019&apikey=c3f38593`,
              method: "GET"
         })
         .done((res) => { 
-            movie.img = `https://img.omdbapi.com/?i=${res.imdbID}&h=6000&apikey=c3f38593`  
-        }),
+            movie.img =  res.Poster.replace("300", "800") 
+        })
     )
 }
 
+
+
 //builds Charts ----------------------------------------------------
 statData = (pos) => {
-    
+   
+
     movieData.forEach ((movie, i) => {
         movieStats.series[0].data.push(movie.top10)
         movieStats.series[1].data.push(movie.perf)
@@ -184,10 +194,53 @@ statData = (pos) => {
 
     chart.render();
 
-    $.ajax({ url: `/api/movies/daily/`,method: "GET"})
-    .done((res) => { 
+// climb fall ------------------- needs to be finished. ----------------------------------------------
+        let playerDupe = JSON.parse(JSON.stringify(current.all))
+        let playerInfo = tally(playerDupe, [movies.length-1])
+
+        let up = playerInfo.filter((player)=> player.direction === "up")
+        let down = playerInfo.filter((player)=> player.direction === "down")
+      
+        up.sort(function compareNumbers(a, b){ return b.movement - a.movement })
+        down.sort(function compareNumbers(a, b){ return b.movement - a.movement })
+        
+        
+        let downResults = down.filter((player)=> player.movement === down[0].movement)
+        let upResults = up.filter((player)=> player.movement === up[0].movement)
+        // console.log(up.filter((player)=> player.movement === 11))
+        // console.log(downResults)
+
+// should be top10 ------------------------------------------------------------------------------------
+        let top10movies =[]
+
+        $.ajax({url: `/movieData/`,method: "GET"})
+        .done((res) => { 
+            
+            top10movies = res.results 
+            
+            movieData.forEach((movie)=>{ top10movies = top10movies.filter((top10) => top10.title !== movie.title)})
+           
+            $("#weekData").append(`
+                <h5>---- User Moves ----</h5>
+                    ${upResults[0].username} - <i class='fas fa-arrow-up'></i> ${upResults[0].movement} to position ${upResults[0].pos}
+                    <br>
+                    ${downResults[0].username} - <i class='fas fa-arrow-down'></i> ${downResults[0].movement} to position ${downResults[0].pos}
+                <h5>------ Coming Soon  ------</h5>
+                1: ${top10movies[0].title} - ${top10movies[0].date}
+                <br>
+                2: ${top10movies[1].title} - ${top10movies[1].date}
+                <br>
+                3: ${top10movies[2].title} - ${top10movies[2].date}
+            `)
+
+        })
+        
+
+$.ajax({ url: `/api/movies/daily/`,method: "GET"})
+    .done((res) => {  
         userStats.series = res.results
         userStats.series.forEach((series)=>{series.data.unshift(0)})
+
         var chart = new ApexCharts(
             document.querySelector("#userStats"),
             userStats
@@ -211,7 +264,7 @@ statImg = (pos) => {
 
 //interval to change img -------------------------------------------
 let spot = 1
-const movieSwap = setInterval(function(){statImg(spot), spot < 9 ? spot++ : spot = 0}, 12000);
+const movieSwap = setInterval(function(){statImg(spot), spot < 9 ? spot++ : spot = 0}, 6000);
 
 $(".movBtn").click((event)=>{
     clearInterval(movieSwap);

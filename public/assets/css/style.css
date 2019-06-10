@@ -54,6 +54,8 @@ p { padding-left: 15px }
 	font-size: 15px;
 	max-width: 500px;
 	overflow: auto;
+	/* overflow-y: hidden; */
+	
 	padding-bottom: 15px
 }
 .left-card {
@@ -217,3 +219,6 @@ a:not([href]):not([tabindex]) {
 
 	#imgInfo { position: absolute; top: 200px }
 }
+
+#weekData {font-size: 12px}
+#weekData > h5 {margin-top: 10px}
