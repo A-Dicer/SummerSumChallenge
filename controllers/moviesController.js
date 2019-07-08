@@ -58,13 +58,13 @@ module.exports = {
     }
 
     finish = (oldInfo, newInfo) => {
-      console.log("part3")
+      console.log(oldInfo[oldInfo.length-1])
 
       oldInfo.length && newInfo.length 
         ? (
             //set oldMovies to the most recent list
             oldMovie = JSON.parse(JSON.stringify(oldInfo[oldInfo.length- 1].movies)),
-            console.log(oldMovie[0].title),
+            
             //scrape new list from boxOffice mojo
                 //make sure scrape worked
                 newInfo.length
