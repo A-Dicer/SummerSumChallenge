@@ -95,7 +95,7 @@ module.exports = {
     let searchTerm
     idGet = (movie, i) =>{
       // console.log(`movie: ${movie} - i: ${i}`)
-      movie[i].title === undefined ? null : (
+      !movie[i] ? null : (
       searchTerm = movie[i].title.replace("(2019)", ""),
       // console.log(`searchTerm: ${searchTerm}`)
     
