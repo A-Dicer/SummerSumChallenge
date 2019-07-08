@@ -30,7 +30,7 @@ module.exports = {
   //-------------------------- Check Movies ------------------------------
   check: function(req, res) {
     let data = [];
-    console.log("part1")
+
     db.Movies.find(req.query)
         .then(dbModel => {
           boxofficeScrape("http://www.boxofficemojo.com/seasonal/?chart=&season=Spring&yr=2019&view=releasedate", 2, dbModel)
@@ -39,7 +39,7 @@ module.exports = {
 
 
     boxofficeScrape = (url, number, oldInfo) => {
-      console.log("part2")
+      // console.log(oldInfo[oldInfo.length-1])
       request(url, function(error, response, html) {
         const $ = cheerio.load(html);
         $('div#body').children('center').children('table').children('tbody').children().each(function(i, element) {  
@@ -58,7 +58,7 @@ module.exports = {
     }
 
     finish = (oldInfo, newInfo) => {
-      console.log(oldInfo[oldInfo.length-1])
+      // console.log(oldInfo[oldInfo.length-1])
 
       oldInfo.length && newInfo.length 
         ? (
@@ -72,7 +72,7 @@ module.exports = {
                     //reset check to false
                     check = false,
                     //go through and check to see if the old and new list match
-                    newInfo.map((mov, i) => {mov.title != oldMovie[i].title ? check = true : null }), 
+                    newInfo.map((mov, i) => {console.log(i)}), 
                     
                     //if they don't match add new list to database
                     check 
