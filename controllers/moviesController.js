@@ -72,7 +72,7 @@ module.exports = {
                     //reset check to false
                     check = false,
                     //go through and check to see if the old and new list match
-                    newInfo.map((mov, i) => {console.log(i)}), 
+                    newInfo.map((mov, i) => {mov.title != oldMovie[i].title ? check = true : null }), 
                     
                     //if they don't match add new list to database
                     check 
@@ -97,7 +97,6 @@ module.exports = {
     let searchTerm
     idGet = (movie, i) =>{
       // console.log(`movie: ${movie} - i: ${i}`)
-      !movie[i] ? null : (
       searchTerm = movie[i].title.replace("(2019)", ""),
       // console.log(`searchTerm: ${searchTerm}`)
     
@@ -121,7 +120,6 @@ module.exports = {
           i === 9 ? res.send({results: finalData}) : idGet(movie, i+1) 
         })
       })
-    )
     }
 
     db.Movies.find(req.query)
