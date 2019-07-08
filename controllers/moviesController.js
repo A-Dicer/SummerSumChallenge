@@ -92,8 +92,12 @@ module.exports = {
   //-------------------------- Check Daily ------------------------------
   daily: function(req, res) {
     let finalData = []
+    let searchTerm
     idGet = (movie, i) =>{
-      let searchTerm = movie[i].title.replace("(2019)", "")
+      // console.log(`movie: ${movie} - i: ${i}`)
+      movie[i].title === undefined ? null : (
+      searchTerm = movie[i].title.replace("(2019)", ""),
+      // console.log(`searchTerm: ${searchTerm}`)
     
       request(`https://www.boxofficemojo.com/search/?q=${searchTerm}`, function(error, response, html) {
         const $ = cheerio.load(html);
@@ -115,6 +119,7 @@ module.exports = {
           i === 9 ? res.send({results: finalData}) : idGet(movie, i+1) 
         })
       })
+    )
     }
 
     db.Movies.find(req.query)

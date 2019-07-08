@@ -180,7 +180,6 @@ getImdb = (title) => {
 //builds Charts ----------------------------------------------------
 statData = (pos) => {
    
-
     movieData.forEach ((movie, i) => {
         movieStats.series[0].data.push(movie.top10)
         movieStats.series[1].data.push(movie.perf)
@@ -219,6 +218,9 @@ statData = (pos) => {
             top10movies = res.results 
             
             movieData.forEach((movie)=>{ top10movies = top10movies.filter((top10) => top10.title !== movie.title)})
+
+           let comingSoon = top10movies.filter((top10) => new Date(top10.date).getTime() > Date.now())
+            
            
             $("#weekData").append(`
                 <h5>---- User Moves ----</h5>
@@ -226,11 +228,11 @@ statData = (pos) => {
                     <br>
                     ${downResults[0].username} - <i class='fas fa-arrow-down'></i> ${downResults[0].movement} to position ${downResults[0].pos}
                 <h5>------ Coming Soon  ------</h5>
-                1: ${top10movies[0].title} - ${top10movies[0].date}
+                1: ${comingSoon[0].title} - ${comingSoon[0].date}
                 <br>
-                2: ${top10movies[1].title} - ${top10movies[1].date}
+                2: ${comingSoon[1].title} - ${comingSoon[1].date}
                 <br>
-                3: ${top10movies[2].title} - ${top10movies[2].date}
+                3: ${comingSoon[2].title} - ${comingSoon[2].date}
             `)
 
         })
