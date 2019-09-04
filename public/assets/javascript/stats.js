@@ -210,48 +210,48 @@ statData = (pos) => {
         // console.log(downResults)
 
 // should be top10 ------------------------------------------------------------------------------------
-        let top10movies =[]
+        // let top10movies =[]
 
-        $.ajax({url: `/movieData/`,method: "GET"})
-        .done((res) => { 
+        // $.ajax({url: `/movieData/`,method: "GET"})
+        // .done((res) => { 
             
-            top10movies = res.results 
+        //     top10movies = res.results 
             
-            movieData.forEach((movie)=>{ top10movies = top10movies.filter((top10) => top10.title !== movie.title)})
+        //     movieData.forEach((movie)=>{ top10movies = top10movies.filter((top10) => top10.title !== movie.title)})
 
-           let comingSoon = top10movies.filter((top10) => new Date(top10.date).getTime() > Date.now())
+        //    let comingSoon = top10movies.filter((top10) => new Date(top10.date).getTime() > Date.now())
             
            
-            $("#weekData").append(`
-                <h5>---- User Moves ----</h5>
-                    ${upResults[0].username} - <i class='fas fa-arrow-up'></i> ${upResults[0].movement} to position ${upResults[0].pos}
-                    <br>
-                    ${downResults[0].username} - <i class='fas fa-arrow-down'></i> ${downResults[0].movement} to position ${downResults[0].pos}
-                <h5>------ Coming Soon  ------</h5>
-                1: ${comingSoon[0].title} - ${comingSoon[0].date}
-                <br>
-                2: ${comingSoon[1].title} - ${comingSoon[1].date}
-                <br>
-                3: ${comingSoon[2].title} - ${comingSoon[2].date}
-            `)
+        //     $("#weekData").append(`
+        //         <h5>---- User Moves ----</h5>
+        //             ${upResults[0].username} - <i class='fas fa-arrow-up'></i> ${upResults[0].movement} to position ${upResults[0].pos}
+        //             <br>
+        //             ${downResults[0].username} - <i class='fas fa-arrow-down'></i> ${downResults[0].movement} to position ${downResults[0].pos}
+        //         <h5>------ Coming Soon  ------</h5>
+        //         1: ${comingSoon[0].title} - ${comingSoon[0].date}
+        //         <br>
+        //         2: ${comingSoon[1].title} - ${comingSoon[1].date}
+        //         <br>
+        //         3: ${comingSoon[2].title} - ${comingSoon[2].date}
+        //     `)
 
-        })
+        // })
         
 
-$.ajax({ url: `/api/movies/daily/`,method: "GET"})
-    .done((res) => {  
-        userStats.series = res.results
-        userStats.series.forEach((series)=>{series.data.unshift(0)})
+// $.ajax({ url: `/api/movies/daily/`,method: "GET"})
+//     .done((res) => {  
+//         userStats.series = res.results
+//         userStats.series.forEach((series)=>{series.data.unshift(0)})
 
-        var chart = new ApexCharts(
-            document.querySelector("#userStats"),
-            userStats
-        );
+//         var chart = new ApexCharts(
+//             document.querySelector("#userStats"),
+//             userStats
+//         );
     
-        chart.render();
-    })
+//         chart.render();
+//     })
    
-}
+// }
 
 //updates dom with imdb img ----------------------------------------
 statImg = (pos) => {
